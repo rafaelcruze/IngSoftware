@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor: 1
+  fecha_pago: 2018-04-25
+  tipo_pago_id: 1
+  estado_id: 1
+  usuario_id: 1
+  alumno_id: 1
+
+two:
+  valor: 1
+  fecha_pago: 2018-04-25
+  tipo_pago_id: 1
+  estado_id: 1
+  usuario_id: 1
+  alumno_id: 1
