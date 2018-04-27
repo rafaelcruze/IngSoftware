@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427032700) do
+ActiveRecord::Schema.define(version: 20180427203110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20180427032700) do
     t.date "fecha_pago"
     t.integer "tipo_pago_id"
     t.integer "estado_id"
+    t.integer "estudiante_id"
     t.integer "usuario_id"
-    t.integer "alumno_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,9 +90,12 @@ ActiveRecord::Schema.define(version: 20180427032700) do
   end
 
   add_foreign_key "estudiantes", "comunas"
-  add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
   add_foreign_key "estudiantes", "usuarios"
+  add_foreign_key "pagos", "estados"
+  add_foreign_key "pagos", "estudiantes", column: "usuario_id"
+  add_foreign_key "pagos", "tipo_pagos"
+  add_foreign_key "pagos", "usuarios", column: "estudiante_id"
   add_foreign_key "usuarios", "comunas"
   add_foreign_key "usuarios", "tipo_usuarios"
 end
