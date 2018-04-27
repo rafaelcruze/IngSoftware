@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427203110) do
+ActiveRecord::Schema.define(version: 20180427204047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20180427203110) do
   end
 
   add_foreign_key "estudiantes", "comunas"
+  add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
   add_foreign_key "estudiantes", "usuarios"
   add_foreign_key "pagos", "estados"
