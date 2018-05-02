@@ -1,2 +1,3 @@
 class Comuna < ApplicationRecord
+  
 end
