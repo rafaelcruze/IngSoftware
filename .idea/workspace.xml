@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fda8dc0-b2fb-4788-a857-a93cef655566" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/estado.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/estado.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/estudiante.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/estudiante.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/nivel_educacional.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/nivel_educacional.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/pago.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/pago.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/comuna.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comuna.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/jornada.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/jornada.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/tipo_pago.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tipo_pago.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/tipo_usuario.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tipo_usuario.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/usuario.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/usuario.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -22,26 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="nivel_educacional.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/nivel_educacional.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="estado.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/estado.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,6 +43,11 @@
         <option value="$PROJECT_DIR$/app/models/pago.rb" />
         <option value="$PROJECT_DIR$/app/models/nivel_educacional.rb" />
         <option value="$PROJECT_DIR$/app/models/estado.rb" />
+        <option value="$PROJECT_DIR$/app/models/jornada.rb" />
+        <option value="$PROJECT_DIR$/app/models/tipo_pago.rb" />
+        <option value="$PROJECT_DIR$/app/models/tipo_usuario.rb" />
+        <option value="$PROJECT_DIR$/app/models/usuario.rb" />
+        <option value="$PROJECT_DIR$/app/models/comuna.rb" />
       </list>
     </option>
   </component>
@@ -77,8 +63,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="172" />
-    <option name="y" value="128" />
+    <option name="x" value="75" />
+    <option name="y" value="24" />
     <option name="width" value="1277" />
     <option name="height" value="688" />
   </component>
@@ -88,8 +74,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,6 +96,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,15 +234,15 @@
       <workItem from="1524861016693" duration="1956000" />
       <workItem from="1524933235490" duration="605000" />
       <workItem from="1525209404144" duration="1459000" />
+      <workItem from="1525224900884" duration="858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15653000" />
+    <option name="totallyTimeSpent" value="16511000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="128" width="1277" height="688" extended-state="0" />
-    <editor active="true" />
+    <frame x="75" y="24" width="1277" height="688" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980423" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -292,13 +278,21 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427200725_add_foreign_key_to_pagos.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/nivel_educacional.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/estado.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427200725_add_foreign_key_to_pagos.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180424181209_create_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -306,13 +300,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427201731_change_column_in_pagos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427201731_change_column_in_pagos.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180424181209_create_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -392,27 +380,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427200725_add_foreign_key_to_pagos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427201731_change_column_in_pagos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427203110_change_column_in_pagos2.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427200725_add_foreign_key_to_pagos.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427201731_change_column_in_pagos.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427203110_change_column_in_pagos2.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180427031143_add_column_usuario_id_to_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -427,17 +397,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180427204047_add_foreign_key_jornada_id_to_estudiantes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180427204047_add_foreign_key_jornada_id_to_estudiantes.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180427031310_add_foreign_key_to_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/estado.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -448,6 +419,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/comuna.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/jornada.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/nivel_educacional.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/pago.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -455,17 +447,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/nivel_educacional.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/tipo_pago.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="15">
+          <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estado.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/tipo_usuario.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <caret line="1" column="73" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/usuario.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
