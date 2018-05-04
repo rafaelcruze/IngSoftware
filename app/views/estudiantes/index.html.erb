@@ -1,0 +1,11 @@
+<% @estudiantes.each do |estudiante| %>
+  Nombres <%= estudiante.nombres %>
+  Apellidos <%= estudiante.apellidos %>
+  Rut <%= estudiante.rut.to_s %>
+  <%=link_to 'mostrar', estudiante_url(estudiante) %>
+  <%= link_to 'editar', editar_estudiante_url(estudiante) %>
+  <%= link_to 'ELIMINAR', estudiante_path(estudiante),
+              method: :delete,
+              data: {confirm: '¿Estas seguro?'} %>
+  <br>
+<%end %>
