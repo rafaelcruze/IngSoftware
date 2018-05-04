@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fda8dc0-b2fb-4788-a857-a93cef655566" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/models/comuna.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comuna.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/jornada.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/jornada.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/tipo_pago.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tipo_pago.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/tipo_usuario.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/tipo_usuario.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/usuario.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/usuario.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/estudiante.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/estudiante.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -22,7 +19,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="estudiante.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +46,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20180427203110_change_column_in_pagos2.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180427031310_add_foreign_key_to_estudiantes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180427204047_add_foreign_key_jornada_id_to_estudiantes.rb" />
-        <option value="$PROJECT_DIR$/app/models/estudiante.rb" />
         <option value="$PROJECT_DIR$/app/models/pago.rb" />
         <option value="$PROJECT_DIR$/app/models/nivel_educacional.rb" />
         <option value="$PROJECT_DIR$/app/models/estado.rb" />
@@ -48,6 +54,7 @@
         <option value="$PROJECT_DIR$/app/models/tipo_usuario.rb" />
         <option value="$PROJECT_DIR$/app/models/usuario.rb" />
         <option value="$PROJECT_DIR$/app/models/comuna.rb" />
+        <option value="$PROJECT_DIR$/app/models/estudiante.rb" />
       </list>
     </option>
   </component>
@@ -63,10 +70,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="24" />
-    <option name="width" value="1277" />
-    <option name="height" value="688" />
+    <option name="x" value="55" />
+    <option name="y" value="260" />
+    <option name="width" value="1275" />
+    <option name="height" value="643" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -74,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -89,14 +97,18 @@
             <path>
               <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
               <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="migrate" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
     </panes>
   </component>
@@ -235,16 +247,19 @@
       <workItem from="1524933235490" duration="605000" />
       <workItem from="1525209404144" duration="1459000" />
       <workItem from="1525224900884" duration="858000" />
+      <workItem from="1525407432078" duration="38000" />
+      <workItem from="1525460912589" duration="1776000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16511000" />
+    <option name="totallyTimeSpent" value="18325000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="24" width="1277" height="688" extended-state="0" />
+    <frame x="55" y="260" width="1275" height="643" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980423" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019607" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -390,13 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180424181209_create_estudiantes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180427204047_add_foreign_key_jornada_id_to_estudiantes.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180427031310_add_foreign_key_to_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -409,20 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/comuna.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -465,6 +459,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/comuna.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180424181209_create_estudiantes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
