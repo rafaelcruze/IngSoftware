@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fda8dc0-b2fb-4788-a857-a93cef655566" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/estudiantes/_formulario.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/usuario.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/usuario.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -20,21 +18,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="estudiantes_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="20180426021106_create_usuarios.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180426021106_create_usuarios.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="165">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_formulario.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/estudiantes/_formulario.html.erb">
+      <file leaf-file-name="usuario.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/usuario.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -61,7 +59,6 @@
         <option value="$PROJECT_DIR$/app/models/jornada.rb" />
         <option value="$PROJECT_DIR$/app/models/tipo_pago.rb" />
         <option value="$PROJECT_DIR$/app/models/tipo_usuario.rb" />
-        <option value="$PROJECT_DIR$/app/models/usuario.rb" />
         <option value="$PROJECT_DIR$/app/models/comuna.rb" />
         <option value="$PROJECT_DIR$/app/models/estudiante.rb" />
         <option value="$PROJECT_DIR$/app/controllers/estudiantes_controller.rb" />
@@ -72,6 +69,7 @@
         <option value="$PROJECT_DIR$/app/views/estudiantes/nuevo.html.erb" />
         <option value="$PROJECT_DIR$/app/models/nivel_educacional.rb" />
         <option value="$PROJECT_DIR$/app/views/estudiantes/_formulario.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/usuario.rb" />
       </list>
     </option>
   </component>
@@ -110,12 +108,6 @@
               <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
               <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IngSoftware" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IngSoftware" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,11 +253,12 @@
       <workItem from="1525224900884" duration="858000" />
       <workItem from="1525407432078" duration="38000" />
       <workItem from="1525460912589" duration="5860000" />
+      <workItem from="1525487665358" duration="1118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22409000" />
+    <option name="totallyTimeSpent" value="23527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="191" y="98" width="1275" height="670" extended-state="0" />
@@ -453,13 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/usuario.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/comuna.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -474,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180424181209_create_estudiantes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -488,49 +467,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/crear.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/editar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/mostrar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/nuevo.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/editar.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/index.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/mostrar.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb" />
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180426013528_create_nivel_educacionals.rb">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/nivel_educacional.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -539,10 +485,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/_formulario.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/estudiantes/_formulario.html.erb" />
+    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/estudiantes.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180426021106_create_usuarios.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/usuario.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
