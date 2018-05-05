@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  #CRUD USUARIO
+
+  get '/usuarios', to: 'usuarios#index', as: 'usuarios'
+  get '/usuarios/nuevo', to: 'usuarios#nuevo' #new
+  get '/usuarios/:id', to: 'usuarios#mostrar', as: 'usuario' #show
+  post '/usuarios', to: 'usuarios#crear', as: 'crear_usuario'
+  get 'usuarios/:id/editar', to: 'usuarios#editar', as: 'editar_usuario'
+  put 'usuarios/:id', to: 'usuarios#update'
+  patch 'usuarios/:id', to: 'usuarios#update'
+  delete 'usuarios/:id', to: 'usuarios#eliminar'
+
+  #CRUD ESTUDIANTE
+
   get '/estudiantes', to: 'estudiantes#index', as: 'estudiantes'
   get '/estudiantes/nuevo', to: 'estudiantes#nuevo' #new
   get '/estudiantes/:id', to: 'estudiantes#mostrar', as: 'estudiante' #show

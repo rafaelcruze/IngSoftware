@@ -5,6 +5,8 @@
       <%= error %>
     <% end %>
   <% end %>
+
+
   <%= f.label :nombres %>
   <%= f.text_field :nombres %>
 
@@ -28,6 +30,7 @@
   <%= f.label :jornada %>
   <%= f.select('jornada_id',
                Jornada.all.collect {|c| [c.descripcion, c.id]}) %>
+  
 
   <%= f.submit %>
 <% end %>

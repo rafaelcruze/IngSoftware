@@ -1,0 +1,38 @@
+<%= form_for(@usuario, :html => {:role => 'form'}) do |f| %>
+  <% if @usuario.errors.any? %>
+    <%= pluralize(@usuario.errors.count, "Errores") %>
+    <% @usuario.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+  <%= f.label :nombres %>
+  <%= f.text_field :nombres %>
+
+  <%= f.label :apellidos %>
+  <%= f.text_field :apellidos %>
+
+  <%= f.label :rut %>
+  <%= f.text_field :rut %>
+
+  <%= f.label :contraseña %>
+  <%= f.text_field :contraseña %>
+
+  <%= f.label :fecha_nacimiento %>
+  <%= f.text_field :fecha_nacimiento %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :direccion %>
+  <%= f.text_field :direccion %>
+
+  <%= f.label :comuna %>
+  <%= f.select('comuna_id',
+               Comuna.all.collect { |u| [u.descripcion, u.id] }) %>
+
+  <%= f.label :tipo_usuario %>
+  <%= f.select('tipo_usuario_id',
+               TipoUsuario.all.collect {|u| [u.descripcion, u.id]}) %>
+
+  <%= f.submit %>
+<% end %>

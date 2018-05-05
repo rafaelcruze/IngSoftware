@@ -1,0 +1,18 @@
+<% @usuarios.each do |usuario| %>
+  Nombres <%= usuario.nombres %>
+  Apellidos <%= usuario.apellidos %>
+  Rut <%= usuario.rut.to_s %>
+  Email <%= usuario.email %>
+  Contraseña <%= usuario.contraseña %>
+  Fecha_nacimiento <%= usuario.fecha_nacimiento %>
+  Direccion <%= usuario.direccion %>
+
+  comuna <%= usuario.comuna.descripcion %>
+  tipo_usuario <%= usuario.tipo_usuario.descripcion %>
+  <%=link_to 'mostrar', usuario_url(usuario) %>
+  <%= link_to 'editar', editar_usuario_url(usuario) %>
+  <%= link_to 'ELIMINAR', usuario_path(usuario),
+              method: :delete,
+              data: {confirm: '¿Estas seguro?'} %>
+  <br>
+<%end %>
