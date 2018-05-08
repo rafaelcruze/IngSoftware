@@ -19,6 +19,9 @@
   <%= f.label :fecha_nacimiento %>
   <%= f.text_field :fecha_nacimiento %>
 
+  <%= f.label :direccion %>
+  <%= f.text_field :direccion %>
+
   <%= f.label :comuna %>
   <%= f.select('comuna_id',
                Comuna.all.collect {|c| [c.descripcion, c.id]}) %>
@@ -30,7 +33,9 @@
   <%= f.label :jornada %>
   <%= f.select('jornada_id',
                Jornada.all.collect {|c| [c.descripcion, c.id]}) %>
-  
 
+  <%= f.label :usuario %>
+  <%= f.select('usuario_id',
+               Usuario.all.collect {|u| [u.nombres, u.id]}) %>
   <%= f.submit %>
 <% end %>

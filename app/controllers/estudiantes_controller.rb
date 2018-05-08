@@ -48,7 +48,7 @@ class EstudiantesController < ApplicationController
   private
 
   def estudiante_params
-    params.require(:estudiante).permit(:nombres, :apellidos, :rut, :fecha_nacimiento, :comuna_id, :nivel_educacional_id, :jornada_id)
+    params.require(:estudiante).permit(:nombres, :apellidos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :nivel_educacional_id, :jornada_id, :usuario_id)
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   #CRUD ESTUDIANTE
 
   get '/estudiantes', to: 'estudiantes#index', as: 'estudiantes'
-  get '/estudiantes/nuevo', to: 'estudiantes#nuevo' #new
+  get 'estudiantes/nuevo', to: 'estudiantes#nuevo' #new
   get '/estudiantes/:id', to: 'estudiantes#mostrar', as: 'estudiante' #show
   post '/estudiantes', to: 'estudiantes#crear', as: 'crear_estudiante'
   get 'estudiantes/:id/editar', to: 'estudiantes#editar', as: 'editar_estudiante'
