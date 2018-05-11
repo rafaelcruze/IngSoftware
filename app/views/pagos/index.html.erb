@@ -1,0 +1,16 @@
+<% @pagos.each do |pago| %>
+  estudiante <% pago.estudiante.nombres%>
+  usuario <% pago.usuario.nombres %>
+  valor <%= pago.valor %>
+  saldo <%= pago.saldo %>
+  abono <%= pago.abono %>
+  fecha <%= pago.fecha_pago%>
+  estado <%= pago.estado.descripcion %>
+  tipo de pago <%= pago.tipo_pago.descripcion %>
+  <%=link_to 'mostrar', pago_url(pago) %>
+  <%= link_to 'editar', editar_pago_url(pago) %>
+  <%= link_to 'ELIMINAR', pago_path(pago),
+              method: :delete,
+              data: {confirm: '¿Estas seguro?'} %>
+  <br>
+<%end %>

@@ -1,0 +1,39 @@
+<%= form_for(@pago, :html => {:role => 'form'}) do |f| %>
+  <% if @pago.errors.any? %>
+    <%= pluralize(@pago.errors.count, "Errores") %>
+    <% @pago.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+
+  <%= f.label :usuario %>
+  <%= f.select('usuario_id',
+               Usuario.all.collect {|c| [c.nombres,c.id]}) %>
+
+  <%= f.label :estudiante %>
+  <%= f.select('estudiante_id',
+               Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
+
+  <%= f.label :valor %>
+  <%= f.text_field :valor %>
+
+  <%= f.label :abono %>
+  <%= f.text_field :abono %>
+
+  <%= f.label :saldo %>
+  <%= f.text_field :saldo %>
+
+  <%= f.label :fecha_pago %>
+  <%= f.text_field :fecha_pago %>
+
+
+  <%= f.label :estado %>
+  <%= f.select('estado_id',
+               Estado.all.collect { |c| [c.descripcion, c.id] }) %>
+
+  <%= f.label :tipopago %>
+  <%= f.select('tipo_pago_id',
+               TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  #CRUD PAGO
+
+  get '/pagos', to: 'pagos#index', as: 'pagos'
+  get '/pagos/nuevo', to: 'pagos#nuevo' #new
+  get '/pagos/:id', to: 'pagos#mostrar', as: 'pago' #show
+  post '/pagos', to: 'pagos#crear', as: 'crear_pago'
+  get 'pagos/:id/editar', to: 'pagos#editar', as: 'editar_pago'
+  put 'pagos/:id', to: 'pagos#update'
+  patch 'pagos/:id', to: 'pagos#update'
+  delete 'pagos/:id', to: 'pagos#eliminar'
+
   #CRUD USUARIO
 
   get '/usuarios', to: 'usuarios#index', as: 'usuarios'
