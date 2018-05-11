@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511021810) do
+ActiveRecord::Schema.define(version: 20180511022832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20180511021810) do
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "usuario_id"
+    t.integer "estudiante_id"
   end
 
   create_table "comunas", force: :cascade do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 20180511021810) do
     t.integer "celular"
   end
 
+  add_foreign_key "agendas", "estudiantes"
+  add_foreign_key "agendas", "usuarios"
   add_foreign_key "estudiantes", "comunas"
   add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"

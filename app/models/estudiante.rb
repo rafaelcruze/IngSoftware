@@ -1,5 +1,6 @@
 class Estudiante < ApplicationRecord
   has_many :pagos #un estudiante puede tener asociados muchos pagos
+  has_many :agendas
   belongs_to :usuario #un estudiante puede tener asociado un usuario(apoderado)
   belongs_to :comuna #un estudiante puede tener asociado una comuna
   belongs_to :jornada #un estudiante puede ser asociada una jornada

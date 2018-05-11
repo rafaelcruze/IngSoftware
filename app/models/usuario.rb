@@ -3,6 +3,7 @@ class Usuario < ApplicationRecord
   belongs_to :comuna #usuario puede estar asociado a una comuna
   has_many :estudiantes #usuario puede tener asociado a uno o muchos estudiantes
   has_many :pagos #usuario puede estar asociado a muchos pagos
+  has_many :agendas
 
   validates :nombres , presence: { message: 'Ingrese los nombres '} , length: {in: 3..20}
   validates :apellidos , presence: { message: 'Ingrese los apellidos '} , length: {in: 3..20}
