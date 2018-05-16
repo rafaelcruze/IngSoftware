@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'agendas/index'
+
+  get 'agendas/mostrareliminar'
+
+  get 'agendas/update'
+
+  get 'agendas/editar'
+
+  get 'agendas/nuevo'
+
+  get 'agendas/crear'
+
   #CRUD PAGO
 
   get '/pagos', to: 'pagos#index', as: 'pagos'
