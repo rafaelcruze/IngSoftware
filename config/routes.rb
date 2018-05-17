@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'agendas/index'
+  #CRUD AGENDA
 
-  get 'agendas/mostrareliminar'
+  get '/agendas', to: 'agendas#index', as: 'agendas'
+  get '/agendas/nuevo', to: 'agendas#nuevo' #new
+  get '/agendas/:id', to: 'agendas#mostrar', as: 'agenda' #show
+  post '/agendas', to: 'agendas#crear', as: 'crear_agenda'
+  get 'agendas/:id/editar', to: 'agendas#editar', as: 'editar_agenda'
+  put 'agendas/:id', to: 'agendas#update'
+  patch 'agendas/:id', to: 'agendas#update'
+  delete 'agendas/:id', to: 'agendas#eliminar'
 
-  get 'agendas/update'
-
-  get 'agendas/editar'
-
-  get 'agendas/nuevo'
-
-  get 'agendas/crear'
 
   #CRUD PAGO
 

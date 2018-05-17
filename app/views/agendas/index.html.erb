@@ -1,2 +1,12 @@
-<h1>Agendas#index</h1>
-<p>Find me in app/views/agendas/index.html.erb</p>
+<% @agendas.each do |agenda| %>
+  Agenda <%= agenda.comentario %>
+  Fecha <%= agenda.fecha %>
+  Estudiante <%= agenda.estudiante.nombres %>
+  Usuario <%= agenda.usuario.nombres %>
+  <%=link_to 'mostrar', agenda_url(agenda) %>
+  <%= link_to 'editar', editar_agenda_url(agenda) %>
+  <%= link_to 'ELIMINAR', agenda_path(agenda),
+              method: :delete,
+              data: {confirm: '¿Estas seguro?'} %>
+  <br>
+<%end %>
