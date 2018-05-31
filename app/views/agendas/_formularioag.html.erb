@@ -5,19 +5,25 @@
       <%= error %>
     <% end %>
   <% end %>
+
+  <h1>Crear Comentario</h1>
+
+  <p>
+    <%= f.label :usuario %>
+    <%= f.select('usuario_id',
+                 Usuario.all.collect {|c| [c.nombres, c.id]}) %>
+  </p>
+  <p>
+    <%= f.label :estudiante %>
+    <%= f.select('estudiante_id',
+                 Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
+  <p>
   <%= f.label :comentario %>
   <%= f.text_field :comentario %>
-
+  </p>
+  <p>
   <%= f.label :fecha %>
   <%= f.text_field :fecha %>
-
-  <%= f.label :usuario %>
-  <%= f.select('usuario_id',
-               Usuario.all.collect { |c| [c.nombres, c.id] }) %>
-
-  <%= f.label :estudiante %>
-  <%= f.select('estudiante_id',
-               Estudiante.all.collect { |c| [c.nombres, c.id] }) %>
-
-  <%= f.submit %>
+  </p>
+  <%= f.submit 'Guardar comentario'%>
 <% end %>
