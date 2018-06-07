@@ -6,34 +6,52 @@
     <% end %>
   <% end %>
 
-  <%= f.label :usuario %>
-  <%= f.select('usuario_id',
-               Usuario.all.collect {|c| [c.nombres,c.id]}) %>
+  <h1>Registro de Usuario</h1>
 
-  <%= f.label :estudiante %>
-  <%= f.select('estudiante_id',
-               Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
+  <p>
+    <%= f.label :apoderado %>
+    <%= f.select('usuario_id',
+                 Usuario.all.collect {|c| [c.nombres, c.id]}) %>
+  </p>
 
-  <%= f.label :valor %>
-  <%= f.text_field :valor %>
+  <p>
+    <%= f.label :estudiante %>
+    <%= f.select('estudiante_id',
+                 Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
+  </p>
 
-  <%= f.label :abono %>
-  <%= f.text_field :abono %>
+  <p>
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </p>
 
-  <%= f.label :saldo %>
-  <%= f.text_field :saldo %>
+  <p>
+    <%= f.label :abono %>
+    <%= f.text_field :abono %>
+  </p>
 
-  <%= f.label :fecha_pago %>
-  <%= f.text_field :fecha_pago %>
+  <p>
+    <%= f.label :saldo %>
+    <%= f.text_field :saldo %>
+  </p>
+
+  <p>
+    <%= f.label :fecha_pago %>
+    <%= f.text_field :fecha_pago %>
+  </p>
 
 
-  <%= f.label :estado %>
-  <%= f.select('estado_id',
+  <p>
+    <%= f.label :estado %>
+    <%= f.select('estado_id',
                Estado.all.collect { |c| [c.descripcion, c.id] }) %>
+  </p>
 
-  <%= f.label :tipopago %>
-  <%= f.select('tipo_pago_id',
+  <p>
+    <%= f.label :tipopago %>
+    <%= f.select('tipo_pago_id',
                TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
+  </p>
 
-  <%= f.submit %>
+  <%= f.submit 'Guardar Pago'%>
 <% end %>

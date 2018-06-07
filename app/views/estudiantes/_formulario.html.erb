@@ -6,36 +6,55 @@
     <% end %>
   <% end %>
 
+  <h1>Registro de Estudiante</h1>
 
-  <%= f.label :nombres %>
-  <%= f.text_field :nombres %>
+    <p>
+      <%= f.label :nombres %>
+      <%= f.text_field :nombres %>
+    </p>
 
-  <%= f.label :apellidos %>
-  <%= f.text_field :apellidos %>
+  <p>
+    <%= f.label :apellidos %>
+    <%= f.text_field :apellidos %>
+  </p>
 
-  <%= f.label :rut %>
-  <%= f.text_field :rut %>
+  <p>
+    <%= f.label :rut %>
+    <%= f.text_field :rut %>
+  </p>
 
-  <%= f.label :fecha_nacimiento %>
-  <%= f.text_field :fecha_nacimiento %>
+  <p><%= f.label :fecha_nacimiento %>
+    <%= f.text_field :fecha_nacimiento %>
+  </p>
 
-  <%= f.label :direccion %>
-  <%= f.text_field :direccion %>
+  <p>
+    <%= f.label :direccion %>
+    <%= f.text_field :direccion %>
+  </p>
 
-  <%= f.label :comuna %>
-  <%= f.select('comuna_id',
-               Comuna.all.collect {|c| [c.descripcion, c.id]}) %>
+  <p>
+    <%= f.label :comuna %>
+    <%= f.select('comuna_id',
+                 Comuna.all.collect {|c| [c.descripcion, c.id]}) %>
+  </p>
 
-  <%= f.label :nivel_educacional %>
-  <%= f.select('nivel_educacional_id',
-               NivelEducacional.all.collect {|c| [c.descripcion, c.id]}) %>
+  <p>
+    <%= f.label :nivel_educacional %>
+    <%= f.select('nivel_educacional_id',
+                 NivelEducacional.all.collect {|c| [c.descripcion, c.id]}) %>
+  </p>
 
-  <%= f.label :jornada %>
-  <%= f.select('jornada_id',
-               Jornada.all.collect {|c| [c.descripcion, c.id]}) %>
+  <p>
+    <%= f.label :jornada %>
+    <%= f.select('jornada_id',
+                 Jornada.all.collect {|c| [c.descripcion, c.id]}) %>
+  </p>
 
-  <%= f.label :usuario %>
-  <%= f.select('usuario_id',
-               Usuario.all.collect {|u| [u.nombres, u.id]}) %>
-  <%= f.submit %>
+  <p>
+    <%= f.label :apoderado %>
+    <%= f.select('usuario_id',
+                 Usuario.all.collect {|u| [u.nombres, u.id]}) %>
+  </p>
+
+  <%= f.submit 'Guardar Estudiante'%>
 <% end %>
