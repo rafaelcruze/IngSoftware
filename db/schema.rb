@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511022832) do
+ActiveRecord::Schema.define(version: 20180607204035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,30 +89,37 @@ ActiveRecord::Schema.define(version: 20180511022832) do
   end
 
   create_table "usuarios", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "nombres"
     t.string "apellidos"
     t.string "rut"
-    t.string "email"
-    t.string "contraseña"
     t.date "fecha_nacimiento"
     t.string "direccion"
+    t.integer "celular"
     t.integer "comuna_id"
     t.integer "tipo_usuario_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "celular"
+    t.index ["email"], name: "index_usuarios_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
   add_foreign_key "agendas", "estudiantes"
-  add_foreign_key "agendas", "usuarios"
   add_foreign_key "estudiantes", "comunas"
   add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
-  add_foreign_key "estudiantes", "usuarios"
   add_foreign_key "pagos", "estados"
   add_foreign_key "pagos", "estudiantes", column: "usuario_id"
   add_foreign_key "pagos", "tipo_pagos"
-  add_foreign_key "pagos", "usuarios", column: "estudiante_id"
   add_foreign_key "usuarios", "comunas"
   add_foreign_key "usuarios", "tipo_usuarios"
 end
