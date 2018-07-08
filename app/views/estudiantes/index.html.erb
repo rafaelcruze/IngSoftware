@@ -1,11 +1,25 @@
-<% @estudiantes.each do |estudiante| %>
-  Nombres <%= estudiante.nombres %>
-  Apellidos <%= estudiante.apellidos %>
-  Rut <%= estudiante.rut.to_s %>
-  <%=link_to 'mostrar', estudiante_url(estudiante) %>
-  <%= link_to 'editar', editar_estudiante_url(estudiante) %>
-  <%= link_to 'ELIMINAR', estudiante_path(estudiante),
-              method: :delete,
-              data: {confirm: '¿Estas seguro?'} %>
-  <br>
-<%end %>
+<div class="container">
+<table class="table table-striped ">
+  <thead>
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Rut</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @estudiantes.each do |estudiante| %>
+    <tr>
+      <td><%= estudiante.nombres %></td>
+      <td><%= estudiante.apellidos %></td>
+      <td><%= estudiante.rut %></td>
+      <td><%= link_to 'Mostrar', estudiante_url(estudiante), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Editar', editar_estudiante_url(estudiante), class: "btn btn-warning" %></td>
+      <td><%= link_to 'Eliminar', estudiante_path(estudiante), class: "btn btn-danger",
+                      method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>
