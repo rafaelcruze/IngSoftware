@@ -1,16 +1,36 @@
-<% @usuarios.each do |usuario| %>
-  Nombres <%= usuario.nombres %>
-  Apellidos <%= usuario.apellidos %>
-  Rut <%= usuario.rut.to_s %>
-  Email <%= usuario.email %>
-  Contraseña <%= usuario.password %>
-  Fecha_nacimiento <%= usuario.fecha_nacimiento %>
-  Direccion <%= usuario.direccion %>
+<div class="container">
+  <table class="table table-responsive ">
+    <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Rut</th>
+      <th>Email</th>
+      <th>Fecha de nacimiento</th>
+      <th>Dirección</th>
+      <th>Comuna</th>
+      <th>Tipo de usuario</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+    <tbody>
 
-  comuna <%= usuario.comuna.descripcion %>
-  tipo_usuario <%= usuario.tipo_usuario.descripcion %>
-  <%=link_to 'mostrar', usuario_url(usuario) %>
-  <%= link_to 'editar', editar_usuario_url(usuario) %>
-  <%= link_to 'eliminar', registration_path(usuario), data: { confirm: "Estás seguro?" }, method: :delete %>
-  <br>
+<% @usuarios.each do |usuario| %>
+    <tr>
+      <td><%= usuario.nombres %></td>
+      <td><%= usuario.apellidos %></td>
+      <td><%= usuario.rut.to_s %></td>
+      <td><%= usuario.email %></td>
+      <td><%= usuario.fecha_nacimiento %></td>
+      <td><%= usuario.direccion %></td>
+      <td><%= usuario.comuna.descripcion %></td>
+      <td><%= usuario.tipo_usuario.descripcion %></td>
+      <td><%=link_to 'Mostrar', usuario_url(usuario), class: "btn btn-primary"  %></td>
+      <td><a class="btn btn-warning" href="/usuarios/edit" role="button">Editar</a></td>
+      <td><%= link_to 'eliminar', registration_path(usuario), data: { confirm: "Estás seguro?" }, method: :delete, class: "btn btn-danger"  %></td>
+    </tr>
 <%end %>
+    </tbody>
+  </table>
+  <a href="/usuarios/sign_up" class="btn btn-success btn-lg btn-block" role="button" aria-pressed="true">Nuevo</a>
+</div>
