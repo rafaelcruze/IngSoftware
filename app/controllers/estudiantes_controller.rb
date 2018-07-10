@@ -55,6 +55,11 @@ class EstudiantesController < ApplicationController
 
   def set_estudiante
     @estudiante = Estudiante.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'estudiantes/pdf', pdf: 'Pdf'}
   end
 
+  end
 end

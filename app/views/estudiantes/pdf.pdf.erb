@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1><%= @estudiante.nombres %></h1>
+  <h1><%= @estudiante.apellidos %></h1>
+  <h1><%= @estudiante.rut %></h1>
+  <h1><%= @estudiante.fecha_nacimiento %></h1>
+  <h1><%= @estudiante.direccion %></h1>
+  <%= @estudiante.comuna.descripcion %>
+  <%= @estudiante.nivel_educacional.descripcion %>
+  <%= @estudiante.jornada.descripcion %>
+</body>
+</html>
