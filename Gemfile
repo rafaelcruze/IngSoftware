@@ -13,8 +13,13 @@ gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
 
+group :assets do
+  gem 'jquery-ui-rails'
+end
+
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
