@@ -1,4 +1,5 @@
 class UsuariosController < ApplicationController
+  load_and_authorize_resource
   before_action :set_usuario, only: [:mostrar, :eliminar, :editar, :update]
 
 
@@ -42,6 +43,10 @@ class UsuariosController < ApplicationController
         format.html{render :nuevo}
       end
     end
+  end
+
+  def current_ability
+    @current_ability ||= ::Ability.new(current_usuario)
   end
 
   private
