@@ -1,5 +1,6 @@
 class EstudiantesController < ApplicationController
-
+  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_estudiante, only: [:mostrar,:eliminar,:editar,:update]
 
   def index

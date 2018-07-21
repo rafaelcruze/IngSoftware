@@ -1,0 +1,2 @@
+class Apoderado < ApplicationRecord
+end

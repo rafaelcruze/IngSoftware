@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   devise_for :usuarios
   root to: "bienvenido#index"
+
+  #CRUD APODERADO
+  get '/apoderados', to: 'apoderados#index', as: 'apoderados'
+  get '/apoderados/nuevo', to: 'apoderados#nuevo' #new
+  get '/apoderados/:id', to: 'apoderados#mostrar', as: 'apoderado' #show
+  post '/apoderados', to: 'apoderados#crear', as: 'crear_apoderado'
+  get 'apoderados/:id/editar', to: 'apoderados#editar', as: 'editar_apoderado'
+  put 'apoderados/:id', to: 'apoderados#update'
+  patch 'apoderados/:id', to: 'apoderados#update'
+  delete 'apoderados/:id', to: 'apoderados#eliminar'
 
   #CRUD USUARIO
 

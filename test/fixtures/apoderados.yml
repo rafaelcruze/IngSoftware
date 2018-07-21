@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombres: MyString
+  apellidos: MyString
+  rut: MyString
+  fecha_nacimiento: 2018-07-21
+  direccion: MyString
+  celular: 1
+  comunda_id: 1
+
+two:
+  nombres: MyString
+  apellidos: MyString
+  rut: MyString
+  fecha_nacimiento: 2018-07-21
+  direccion: MyString
+  celular: 1
+  comunda_id: 1
