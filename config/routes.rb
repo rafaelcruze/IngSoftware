@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  devise_for :usuarios
   root to: "bienvenido#index"
 
   #CRUD APODERADO
@@ -13,17 +12,6 @@ Rails.application.routes.draw do
   put 'apoderados/:id', to: 'apoderados#update'
   patch 'apoderados/:id', to: 'apoderados#update'
   delete 'apoderados/:id', to: 'apoderados#eliminar'
-
-  #CRUD USUARIO
-
-  get '/usuarios', to: 'usuarios#index', as: 'usuarios'
-  get '/usuarios/nuevo', to: 'usuarios#nuevo' #new
-  get '/usuarios/:id', to: 'usuarios#mostrar', as: 'usuario' #show
-  post '/usuarios', to: 'usuarios#crear', as: 'crear_usuario'
-  get 'usuarios/:id/editar', to: 'usuarios#editar', as: 'editar_usuario'
-  put 'usuarios/:id', to: 'usuarios#update'
-  patch 'usuarios/:id', to: 'usuarios#update'
-  delete 'usuarios/:id', to: 'usuarios#eliminar'
 
   #CRUD AGENDA
 
