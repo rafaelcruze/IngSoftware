@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "bienvenido#index"
 
-  #CRUD APODERADO
-  get '/apoderados', to: 'apoderados#index', as: 'apoderados'
-  get '/apoderados/nuevo', to: 'apoderados#nuevo' #new
-  get '/apoderados/:id', to: 'apoderados#mostrar', as: 'apoderado' #show
-  post '/apoderados', to: 'apoderados#crear', as: 'crear_apoderado'
-  get 'apoderados/:id/editar', to: 'apoderados#editar', as: 'editar_apoderado'
-  put 'apoderados/:id', to: 'apoderados#update'
-  patch 'apoderados/:id', to: 'apoderados#update'
-  delete 'apoderados/:id', to: 'apoderados#eliminar'
+  #CRUD USERS
+  get '/users', to: 'users#index', as: 'users'
+  get '/users/nuevo', to: 'users#nuevo' #new
+  get '/users/:id', to: 'users#mostrar', as: 'user' #show
+  post '/users', to: 'users#crear', as: 'crear_user'
+  get 'users/:id/editar', to: 'users#editar', as: 'editar_user'
+  put 'users/:id', to: 'users#update'
+  patch 'users/:id', to: 'users#update'
+  delete 'users/:id', to: 'users#eliminar'
 
   #CRUD AGENDA
 
