@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :estudiantes
+  has_many :pagos
+  has_many :agenda
+  belongs_to :comuna
+
   ROLES = %i[admin author]
 
   def roles=(roles)
