@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180721213652) do
+ActiveRecord::Schema.define(version: 20180722154834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,19 +22,6 @@ ActiveRecord::Schema.define(version: 20180721213652) do
     t.datetime "updated_at", null: false
     t.integer "usuario_id"
     t.integer "estudiante_id"
-  end
-
-  create_table "apoderados", force: :cascade do |t|
-    t.string "nombres"
-    t.string "apellidos"
-    t.string "rut"
-    t.date "fecha_nacimiento"
-    t.string "direccion"
-    t.integer "celular"
-    t.integer "comuna_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "tipo_usuario_id"
   end
 
   create_table "comunas", force: :cascade do |t|
@@ -120,8 +107,6 @@ ActiveRecord::Schema.define(version: 20180721213652) do
   end
 
   add_foreign_key "agendas", "estudiantes"
-  add_foreign_key "apoderados", "comunas"
-  add_foreign_key "apoderados", "tipo_usuarios"
   add_foreign_key "estudiantes", "comunas"
   add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
