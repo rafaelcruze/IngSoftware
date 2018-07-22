@@ -66,8 +66,8 @@
 
     <div class="col">
       <%= f.label :apoderado%>
-      <%= f.select('apoderado_id',
-                   Apoderado.all.collect {|c| [c.nombres, c.id]}) %>
+      <%= f.select('users_id',
+                   User.all.collect {|c| [c.nombres, c.id]}) %>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
-    @users = Users.all
+    @users = User.all
   end
 
   def mostrar
