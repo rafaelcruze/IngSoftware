@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180722155606) do
+ActiveRecord::Schema.define(version: 20180722161240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180722155606) do
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "usuario_id"
+    t.integer "users_id"
     t.integer "estudiante_id"
   end
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180722155606) do
     t.integer "jornada_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "apoderado_id"
+    t.integer "users_id"
     t.string "direccion"
     t.text "observacion"
   end
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20180722155606) do
     t.integer "tipo_pago_id"
     t.integer "estado_id"
     t.integer "estudiante_id"
-    t.integer "usuario_id"
+    t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "saldo"
@@ -118,6 +118,6 @@ ActiveRecord::Schema.define(version: 20180722155606) do
   add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
   add_foreign_key "pagos", "estados"
-  add_foreign_key "pagos", "estudiantes", column: "usuario_id"
+  add_foreign_key "pagos", "estudiantes", column: "users_id"
   add_foreign_key "pagos", "tipo_pagos"
 end
