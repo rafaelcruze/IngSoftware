@@ -12,8 +12,5 @@
  *
  */
 @import "bootstrap";
-
-.nav-item{
-  font-style: oblique;
-  font-size: larger;
-}
+@import "devise";
+@import "bienvenido";
