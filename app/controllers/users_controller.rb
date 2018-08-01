@@ -51,4 +51,8 @@ class UsersController < ApplicationController
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
