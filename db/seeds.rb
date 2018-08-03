@@ -8,7 +8,6 @@
 
 User.create!([{
                 email: 'admin@admin.com',
-                password: '123456'
-                password_confirmation: '123456',
-                roles_mask: 'admin',
+                password: '123456',
+                password_confirmation: '123456'
   }])
