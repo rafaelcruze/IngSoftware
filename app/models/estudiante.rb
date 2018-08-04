@@ -8,7 +8,8 @@ class Estudiante < ApplicationRecord
 
   validates :nombres , presence:  { message: 'Ingrese los nombres '} , length: {in: 3..20}
   validates :apellidos , presence: { message: 'Ingrese los apellidos'}, length: {in: 3..20}
-  validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true
+  VALID_RUT_REGEX = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i
+  validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true, format: {with: VALID_RUT_REGEX}
   validates :comuna_id , presence: { message: 'Seleccione alguna comuna'}
   validates :jornada_id , presence: { message: 'Selecciones alguna jornada'}
   validates :nivel_educacional_id , presence: { message: 'Seleccione algún nivel educacional'}

@@ -11,3 +11,63 @@ User.create!([{
                 password: '123456',
                 password_confirmation: '123456'
   }])
+
+Jornada.create!([{
+                descripcion: 'Jornada Completa'
+                },
+                {
+                  descripcion: 'Jornada Mañana'
+                },
+                  {
+                    descripcion: 'Jornada Tarde'
+  }])
+
+NivelEducacional.create!([{
+                    descripcion: 'Sala Cuna Menor'
+                  },
+                  {
+                    descripcion: 'Sala Cuna Mayor'
+                },
+                {descripcion: 'Nivel Medio Menor'
+                },
+                {descripcion: 'Nivel Medio Mayor'
+                },
+                {descripcion: 'Nivel de Transición'
+
+  }])
+
+  Comuna.create!([{
+                  descripcion: 'Santiago'},
+                  {descripcion: 'Cerrillos'},
+                  {descripcion: 'Cerro Navia'},
+                  {descripcion: 'Conchalí'},
+                  {descripcion: 'El Bosque'},
+                  {descripcion: 'Estación Central'},
+                  {descripcion: 'Huechuraba'},
+                  {descripcion: 'Independencia'},
+                  {descripcion: 'La Cisterna'},
+                  {descripcion: 'La Florida'},
+                  {descripcion: 'La Granja'},
+                  {descripcion: 'La Pintana'},
+                  {descripcion: 'La Reina'},
+                  {descripcion: 'Las Condes'},
+                  {descripcion: 'Lo Barnechea'},
+                  {descripcion: 'Lo Espejo'},
+                  {descripcion: 'Lo Prado'},
+                  {descripcion: 'Macul'},
+                  {descripcion: 'Maipú'},
+                  {descripcion: 'Nunoa'},
+                  {descripcion: 'Pedro Aguirre Cerda'},
+                  {descripcion: 'Peñalolén'},
+                  {descripcion: 'Providencia'},
+                  {descripcion: 'Pudahuel'},
+                  {descripcion: 'Quilicura'},
+                  {descripcion: 'Quinta Normal'},
+                  {descripcion: 'Recoleta'},
+                  {descripcion: 'Renca'},
+                  {descripcion: 'San Joaquín'},
+                  {descripcion: 'San Miguel'},
+                  {descripcion: 'San Ramón'},
+                  {descripcion: 'Vitacura'
+
+    }])
