@@ -5,6 +5,29 @@
       <%= error %>
     <% end %>
     <% end %>
+
+<div class="form">
+  <h1 class="text-center"> Registro de Usuarios</h1>
+  <div class="field">
+    <%= f.label :nombres %><br/>
+    <%= f.text_field :nombres, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellidos %><br/>
+    <%= f.text_field :apellidos, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut %><br/>
+    <%= f.text_field :rut, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br/>
+    <%= f.text_field :fecha_nacimiento, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -23,7 +46,24 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :direccion %><br/>
+    <%= f.text_field :direccion, autofocus: true %>
+  </div><br/>
+
+<div class="field">
+  <%= f.label :comuna %>
+  <%= f.select('comuna_id',
+               Comuna.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+</div>
+
+<div class="field">
+  <%= f.label :celular %><br/>
+  <%= f.text_field :celular, autofocus: true %>
+</div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Guardar Usuario" %>
   </div>
 <% end %>
+</div>

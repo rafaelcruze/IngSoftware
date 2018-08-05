@@ -3,9 +3,9 @@
 </head>
 <body>
 <div class="login-form">
-  <h2 class="text-center ">Iniciar Sesion</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
+      <h2 class="text-center ">Iniciar Sesion</h2>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"form-control" %>
   </div>

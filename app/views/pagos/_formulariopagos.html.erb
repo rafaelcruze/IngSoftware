@@ -6,12 +6,12 @@
     <% end %>
   <% end %>
 
-  <h1>Registro de Usuario</h1>
+  <h1>Registro de Pagos</h1>
 
   <p>
     <%= f.label :apoderado %>
-    <%= f.select('usuario_id',
-                 Usuario.all.collect {|c| [c.nombres, c.id]}) %>
+    <%= f.select('users_id',
+                 User.all.collect {|c| [c.nombres, c.id]}) %>
   </p>
 
   <p>

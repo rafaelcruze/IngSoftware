@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap-datepicker-rails'
+
 gem 'rut_validation'
 
 gem 'cancancan'
@@ -17,9 +19,7 @@ gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
 
-group :assets do
-  gem 'jquery-ui-rails'
-end
+gem 'jquery-ui-rails'
 
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
