@@ -36,6 +36,11 @@ NivelEducacional.create!([{
 
   }])
 
+TipoPago.create!([{
+                  descripcion: 'Matrícula'},
+                  {descripcion: 'Mensualidad'
+  }])
+
   Comuna.create!([{
                   descripcion: 'Santiago'},
                   {descripcion: 'Cerrillos'},
