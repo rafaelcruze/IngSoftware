@@ -8,6 +8,11 @@
 
 <div class="form">
   <h1 class="text-center"> Registro de Usuarios</h1>
+<div class="field">
+  <%= f.label :tipousuario %>
+  <%= f.select('tipo_usuario_id',
+               TipoUsuario.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+</div>
   <div class="field">
     <%= f.label :nombres %><br/>
     <%= f.text_field :nombres, autofocus: true %>

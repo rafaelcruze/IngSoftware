@@ -1,8 +1,12 @@
 <%= form_for(@estudiante, :html => {:role => 'form'}) do |f| %>
   <% if @estudiante.errors.any? %>
+  <div class="alert alert-info">
     <%= pluralize(@estudiante.errors.count, "Errores") %>
+  </div>
     <% @estudiante.errors.full_messages.each do |error| %>
+    <div class="alert alert-danger">
       <%= error %>
+</div>
     <% end %>
   <% end %>
 
@@ -33,7 +37,7 @@
     <div class="col">
       <div class="form-group">
         <%= f.label :fecha_nacimiento %>
-        <%= f.text_field :fecha_nacimiento, class: "form-control", placeholder: "Fecha de Nacimiento"%>
+        <%= f.date_field :fecha_nacimiento, class: "form-control", placeholder: "Fecha de Nacimiento"%>
       </div>
     </div>
     <div class="col">

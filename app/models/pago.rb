@@ -4,9 +4,9 @@ class Pago < ApplicationRecord
   belongs_to :user #pago puede estar asociado a un usuario
   belongs_to :estudiante #pago puede estar asociado a un estudiante
 
-  validates :valor , presence: { message: 'Ingrese un valor'}
-  validates :abono , presence: { message: 'Ingrese un abono'}
-  validates :saldo , presence: { message: 'Ingrese un saldo'}
+  validates :valor , presence: { message: 'Ingrese un valor'}, numericality: { only_integer: true }
+  validates :abono , presence: { message: 'Ingrese un abono'}, numericality: { only_integer: true }
+  validates :saldo , presence: { message: 'Ingrese un saldo'}, numericality: { only_integer: true }
   validates :fecha_pago , presence: { message: 'Ingrese una fecha de pago'}
   validates :tipo_pago_id , presence: { message: 'Seleccione tipo de pago'}
   validates :estado_id , presence: { message: 'Seleccione estado de pago'}
