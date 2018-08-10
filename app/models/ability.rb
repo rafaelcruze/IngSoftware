@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     if user.present?
-      if user.tipo_usuario != nil
+      if user.tipo_usuario.descripcion == 'Administrador'
         can :manage, :all
       end
   end
