@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up)  { |u| u.permit(  :email,:password, :password_confirmation, roles: []) }
   end
+
+  layout :manejo_vista_admin
+  private
+  def manejo_vista_admin
+    if devise_controller?
+      "login"
+    else
+      "application"
+    end
+  end
 end
