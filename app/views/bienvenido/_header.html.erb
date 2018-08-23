@@ -19,7 +19,9 @@
           Sesion
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/users/edit">Editar </a>
+          <%= link_to "Change your password", edit_user_registration_path%>
+
+          <a class="dropdown-item" >Editar </a>
           <a class="dropdown-item" data-method="delete" href="/users/sign_out">Salir</a>
         </div>
       </li>
