@@ -19,6 +19,11 @@ User.create!([{
                 tipo_usuario_id: (TipoUsuario.find_by_descripcion('Administrador')).id
   }])
 
+Estado.create!([{
+              descripcion: 'Pagado'},
+              {descripcion: 'Pendiente'
+  }])
+
 Jornada.create!([{
                 descripcion: 'Jornada Completa'
                 },

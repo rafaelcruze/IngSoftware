@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar Contraseña </h2>
 
 <%= form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put} ) do |f| %>
 <%= devise_error_messages! %>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :Nueva_Contraseña %> <i>(deje en blanco si no quiere cambiar contraseña)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> caracteres minimos</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirmacion_de_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :Contraseña_actual %> <i>(la necesitamos para confirmar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Actualizar" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Eliminar mi cuenta</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Cancelar mi cuenta", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Volver", :back %>
