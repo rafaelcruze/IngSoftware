@@ -2,7 +2,7 @@
   Agenda <%= agenda.comentario %>
   Fecha <%= agenda.fecha %>
   Estudiante <%= agenda.estudiante.nombres %>
-  Usuario <%= agenda.usuario.nombres %>
+  
   <%=link_to 'mostrar', agenda_url(agenda) %>
   <%= link_to 'editar', editar_agenda_url(agenda) %>
   <%= link_to 'ELIMINAR', agenda_path(agenda),

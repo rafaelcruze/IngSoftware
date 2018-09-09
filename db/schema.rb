@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 20180805204819) do
   add_foreign_key "estudiantes", "nivel_educacionals"
   add_foreign_key "estudiantes", "users", column: "users_id"
   add_foreign_key "pagos", "estados"
+  add_foreign_key "pagos", "estudiantes"
+  add_foreign_key "pagos", "estudiantes", column: "users_id"
   add_foreign_key "pagos", "tipo_pagos"
   add_foreign_key "pagos", "users", column: "users_id"
   add_foreign_key "users", "comunas"

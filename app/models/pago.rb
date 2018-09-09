@@ -1,7 +1,7 @@
 class Pago < ApplicationRecord
   belongs_to :tipo_pago #pago puede tener asociado un tipo de pago
   belongs_to :estado #pago puede tener asociado uno estado
-  belongs_to :user #pago puede estar asociado a un usuario
+  has_many :user #pago puede estar asociado a un usuario
   belongs_to :estudiante #pago puede estar asociado a un estudiante
 
   validates :valor , presence: { message: 'Ingrese un valor'}, numericality: { only_integer: true }
