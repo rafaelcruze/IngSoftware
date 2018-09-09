@@ -5,13 +5,15 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <h1><%= @estudiante.nombres %></h1>
-  <h1><%= @estudiante.apellidos %></h1>
-  <h1><%= @estudiante.rut %></h1>
-  <h1><%= @estudiante.fecha_nacimiento %></h1>
-  <h1><%= @estudiante.direccion %></h1>
-  <%= @estudiante.comuna.descripcion %>
-  <%= @estudiante.nivel_educacional.descripcion %>
-  <%= @estudiante.jornada.descripcion %>
+  <div class="container-form">
+  <h1>Nombres: <%= @estudiante.nombres %></h1>
+  <h1>Apellidos: <%= @estudiante.apellidos %></h1>
+  <h1>Rut: <%= @estudiante.rut %></h1>
+  <h1>Fecha de Nacimiento: <%= @estudiante.fecha_nacimiento %></h1>
+  <h1>Direccion: <%= @estudiante.direccion %></h1>
+  <h1>Comuna: <%= @estudiante.comuna.descripcion %></h1>
+  <h1>Nivel Educacional: <%= @estudiante.nivel_educacional.descripcion %></h1>
+  <h1>Jornada: <%= @estudiante.jornada.descripcion %></h1>
+</div>
 </body>
 </html>

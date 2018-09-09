@@ -1,4 +1,5 @@
 class AgendasController < ApplicationController
+  load_and_authorize_resource
   before_action :set_agenda, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
