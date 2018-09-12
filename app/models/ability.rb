@@ -6,14 +6,7 @@ class Ability
       if user.tipo_usuario.descripcion == 'Administrador'
         can :manage, :all
     end
-      if user.tipo_usuario.descripcion == 'Apoderado'
-        can :nuevo, Agenda
-        can :crear, Agenda
-        can :index, Agenda
-        can :editar, Agenda
-        can :mostrar, Agenda
     end
-  end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

@@ -1,2 +1,18 @@
-<h1>Users#mostrar</h1>
-<p>Find me in app/views/users/mostrar.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="container-form">
+  <h1>Nombres: <%= @user.nombres %></h1>
+  <h1>Apellidos: <%= @user.apellidos %></h1>
+  <h1>Rut: <%= @user.rut %></h1>
+  <h1>Fecha de Nacimiento: <%= @user.fecha_nacimiento %></h1>
+  <h1>Direccion: <%= @user.direccion %></h1>
+  <h1>Comuna: <%= @user.comuna.descripcion %></h1>
+  <h1>Celular: <%= @user.celular %></h1>
+</div>
+</body>
+</html>

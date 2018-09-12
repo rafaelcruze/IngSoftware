@@ -16,13 +16,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
       if @user.update(user_params)
+        respond_to do |format|
         format.html {redirect_to user_path(@user), notice: 'Se Actualizaron los datos'}
+      end
       else
         render :editar
       end
-    end
   end
 
   def editar
