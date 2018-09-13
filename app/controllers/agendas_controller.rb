@@ -18,7 +18,7 @@ class AgendasController < ApplicationController
 
   def update
     respond_to do |format|
-      if @agenda.update(agendas_params)
+      if @agenda.update(agenda_params)
         format.html {redirect_to agenda_path(@agenda), notice: 'Se Actualizaron los datos'}
       else
         render :editar
