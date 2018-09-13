@@ -16,7 +16,8 @@ User.create!([{
                 email: 'admin@admin.com',
                 password: '123456',
                 password_confirmation: '123456',
-                tipo_usuario_id: (TipoUsuario.find_by_descripcion('Administrador')).id
+                tipo_usuario_id: (TipoUsuario.find_by_descripcion('Administrador')).id,
+                comuna_id: (Comuna.find_by_descripcion('La Florida'))
   }])
 
 Estado.create!([{

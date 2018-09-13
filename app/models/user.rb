@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :pagos
   has_many :agendas
   belongs_to :tipo_usuario
-  belongs_to :comuna
+  belongs_to :comuna, optional: true
 end
