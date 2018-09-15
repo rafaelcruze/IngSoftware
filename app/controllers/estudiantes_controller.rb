@@ -16,13 +16,12 @@ class EstudiantesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
+     @estudiante = Estudiante.find(params[:id])
       if @estudiante.update(estudiante_params)
-        format.html {redirect_to estudiante_path(@estudiante), notice: 'Se Actualizaron los datos'}
+        redirect_to estudiante_path(@estudiante), notice: 'Se Actualizaron los datos'
       else
         render :editar
       end
-    end
   end
 
   def editar
