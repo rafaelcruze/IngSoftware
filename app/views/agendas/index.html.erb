@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<body>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body></body>
-<div class="container">
-<table class="table table-condensed table-bordered">
-  <thead>
-  <tr>
-    <th>Nombres</th>
-    <th>Apellidos</th>
-    <th>Rut</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @agendas.each do |agenda| %>
-  <tr>
-  <td><%= agenda.comentario %></td>
-  <td><%= agenda.fecha %></td>
-  <td><%= agenda.estudiante.nombres %></td>
-  <td><%=link_to 'mostrar', agenda_url(agenda) %></td>
-  <td><%= link_to 'editar', editar_agenda_url(agenda) %></td>
-  <td><%= link_to 'ELIMINAR', agenda_path(agenda),
-              method: :delete,
-              data: {confirm: '¿Estas seguro?'} %></td>
-  </tr>
-  </tbody>
-</table>
-  <a href="/agendas/nuevo" class="btn btn-success btn-lg btn-block" role="button" aria-pressed="true">Nuevo</a>
+<body>
+ <div class="boton">
+  <a href="/agendas/nuevo" class="btn btn-success btn-lg " role="button" aria-pressed="true">Nuevo</a>
 </div>
+<div class="container">
+  <h2>Agenda</h2>
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Reporte</div>
+      <div class="panel-body">
+        <% @agendas.each do |agenda| %>
+            <h4> Estudiante</h4><%= agenda.estudiante.nombres %> <%= agenda.estudiante.apellidos %>
+            <h4> Comentario</h4><%= agenda.comentario %><br>
+            <%= agenda.fecha %>
+            <div class="derecha">
+            <%= link_to 'Editar', editar_agenda_url(agenda),class:"btn btn-warning" %>
+            <%= link_to 'Eliminar', agenda_path(agenda),
+              method: :delete,
+              data: {confirm: '¿Estas seguro?'}, class:"btn btn-danger" %>
+            </div>
+        <%end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
-
-<%end %>

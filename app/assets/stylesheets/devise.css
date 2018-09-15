@@ -24,3 +24,8 @@
   width: 500px;
     margin: 50px auto;
 }
+
+.imagen{
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+     height: 100%;
+}

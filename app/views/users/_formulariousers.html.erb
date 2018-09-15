@@ -59,13 +59,13 @@
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
-    <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" , placeholder:"Contraseña"%>
   </div>
 </div>
 <div class="col">
   <div class="field">
     <%= f.label :Confirmar_contraseña %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar contraseña" %>
   </div>
 </div>
 </div>

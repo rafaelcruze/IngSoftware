@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :estudiante
   has_many :pagos
-  has_many :agendas
+  belongs_to :agenda
   belongs_to :tipo_usuario
   belongs_to :comuna, optional: true
 
