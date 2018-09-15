@@ -1,9 +1,10 @@
 class Agenda < ApplicationRecord
-  has_many :user
+  belongs_to :user
   belongs_to :estudiante
 
   validates :comentario, presence: { message: 'Ingrese algún comentario'}
   validates :fecha, presence: { message: 'Ingresa alguna fecha'}
+  validate :fecha_de_comentario
 
   def fecha_de_comentario
     if !fecha.blank? and fecha < Date.today

@@ -5,7 +5,9 @@ class Ability
     if user.present?
       if user.tipo_usuario.descripcion == 'Administrador'
         can :manage, :all
-    end
+        end
+        if user.tipo_usuario.descripcion == 'Apoderado'
+        end
     end
     # Define abilities for the passed in user here. For example:
     #

@@ -1,15 +1,41 @@
-<% @pagos.each do |pago| %>
-  estudiante <% pago.estudiante.nombres%>
-  valor <%= pago.valor %>
-  saldo <%= pago.saldo %>
-  abono <%= pago.abono %>
-  fecha <%= pago.fecha_pago%>
-  estado <%= pago.estado.descripcion %>
-  tipo de pago <%= pago.tipo_pago.descripcion %>
-  <%=link_to 'mostrar', pago_url(pago) %>
-  <%= link_to 'editar', editar_pago_url(pago) %>
-  <%= link_to 'ELIMINAR', pago_path(pago),
-              method: :delete,
-              data: {confirm: '¿Estas seguro?'} %>
-  <br>
-<%end %>
+
+<!DOCTYPE html>
+<body>
+<head>
+</head>
+<body></body>
+<div class="container">
+  <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br>  
+<table class="table table-condensed table-bordered">
+  <thead>
+  <tr>
+    <th>Estudiante</th>
+    <th>Valor</th>
+    <th>Abono</th>
+    <th>Saldo</th>
+    <th>Fecha pago</th>
+    <th>Estado</th>
+    <th>Tipo pago</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @pagos.each do |pago| %>
+    <tr>
+      <td><%= pago.estudiante.nombres%>
+      <td><%= pago.valor %></td>
+      <td><%= pago.abono %></td>
+      <td><%= pago.saldo%></td>
+      <td><%= pago.fecha_pago %></td>
+      <td><%= pago.estado.descripcion %></td>
+      <td><%= pago.tipo_pago.descripcion %></td>
+      <td><%= link_to 'Mostrar', pago_url(pago), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Editar', editar_pago_url(pago), class: "btn btn-warning" %></td>
+      <td><%= link_to 'Eliminar', pago_path(pago), class: "btn btn-danger",
+                      method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

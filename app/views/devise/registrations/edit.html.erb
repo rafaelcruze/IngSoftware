@@ -1,42 +1,44 @@
+<div class="editar">
 <h2>Editar Contraseña </h2>
 
 <%= form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put} ) do |f| %>
 <%= devise_error_messages! %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
+  <div class="field"><br>
     <%= f.label :Nueva_Contraseña %> <i>(deje en blanco si no quiere cambiar contraseña)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Nueva contraseña" %>
     <% if @minimum_password_length %>
-      <br />
       <em><%= @minimum_password_length %> caracteres minimos</em>
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="field"><br>
     <%= f.label :Confirmacion_de_contraseña %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar de contraseña" %><br>
   </div>
 
   <div class="field">
     <%= f.label :Contraseña_actual %> <i>(la necesitamos para confirmar los cambios)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", class:"form-control", placeholder:"Nueva contraseña" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Actualizar" %>
+  <div class="actions"><br>
+    <%= f.submit "Actualizar", class:"btn btn-success" %>
   </div>
 <% end %>
 
 <h3>Eliminar mi cuenta</h3>
 
-<p><%= button_to "Cancelar mi cuenta", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Volver", :back %>
+<p><%= button_to "Cancelar mi cuenta", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger" %></p>
+
+<%= link_to "Volver", :back , class:"btn btn-warning"%>
+</div>

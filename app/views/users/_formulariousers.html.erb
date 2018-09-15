@@ -8,65 +8,88 @@
 
 <div class="form">
   <h1 class="text-center"> Registro de Usuarios</h1>
+
+  <div class="row">
+    <div class="col">
 <div class="field">
-  <%= f.label :tipousuario %>
+  <%= f.label :Tipo_de_usuario %>
   <%= f.select('tipo_usuario_id',
                TipoUsuario.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
 </div>
+  </div>
+
+  <div class="col">
   <div class="field">
     <%= f.label :nombres %><br/>
-    <%= f.text_field :nombres, autofocus: true %>
+    <%= f.text_field :nombres, autofocus: true, class: "form-control", placeholder: "Nombres" %>
   </div>
+</div>
 
+  <div class="col">
   <div class="field">
     <%= f.label :apellidos %><br/>
-    <%= f.text_field :apellidos, autofocus: true %>
+    <%= f.text_field :apellidos, autofocus: true, class: "form-control", placeholder: "Apellidos" %>
   </div>
-
+  </div>
+</div>
+  <div class="row">
+    <div class="col">
   <div class="field">
     <%= f.label :rut %><br/>
-    <%= f.text_field :rut, autofocus: true %>
+    <%= f.text_field :rut, autofocus: true, class:"form-control", placeholder: "Rut" %>
   </div>
-
+</div>
+  <div class="col">
   <div class="field">
     <%= f.label :fecha_nacimiento %><br/>
-    <%= f.text_field :fecha_nacimiento, autofocus: true %>
+    <%= f.text_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
   </div>
-
+</div>
+  <div class="col">
   <div class="field">
     <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
   </div>
-
+</div>
+</div>
+<div class="row">
+  <div class="col">
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
   </div>
-
+</div>
+<div class="col">
   <div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :Confirmar_contraseña %><br/>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
   </div>
-
+</div>
+</div>
+<div class="row">
+  <div class="col">
   <div class="field">
     <%= f.label :direccion %><br/>
-    <%= f.text_field :direccion, autofocus: true %>
+    <%= f.text_field :direccion, autofocus: true , class: "form-control", placeholder: "Direccion"%>
   </div><br/>
-
+</div>
+<div class="col">
 <div class="field">
   <%= f.label :comuna %>
   <%= f.select('comuna_id',
                Comuna.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
 </div>
-
+  </div>
+  <div class="col">
 <div class="field">
   <%= f.label :celular %><br/>
-  <%= f.text_field :celular, autofocus: true %>
+  <%= f.text_field :celular, autofocus: true, class: "form-control", placeholder:"Celular" %>
 </div>
-
+</div>
+</div>
   <div class="actions">
     <%= f.submit "Guardar Usuario" %>
   </div>
