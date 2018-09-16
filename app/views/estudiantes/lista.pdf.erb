@@ -1,0 +1,19 @@
+<center><h1> Estudiantes de Sala Cuna y Jardín Infantil </h1></center>
+<table class="table">
+  <thead>
+  <tr>
+    <th style="width: 200px;">Nombres</th>
+    <th style="width: 200px;">Apellidos</th>
+    <th style="width: 200px;">Rut</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @estudiantes.each do |estudiante| %>
+    <tr>
+      <td><%= estudiante.nombres %></td>
+      <td><%= estudiante.apellidos %></td>
+      <td><%= estudiante.rut %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

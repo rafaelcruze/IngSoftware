@@ -3,6 +3,11 @@ class EstudiantesController < ApplicationController
 
   def index
     @estudiantes = Estudiante.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'estudiantes/lista', pdf: 'Lista', layout: 'lista.html'}
+    end
   end
 
   def mostrar

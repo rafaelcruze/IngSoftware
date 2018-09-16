@@ -17,14 +17,12 @@ class PagosController < ApplicationController
   end
 
   def update
-
-    respond_to do |format|
+    @pago = Pago.find(params[:id])
       if @pago.update(pago_params)
-        format.html {redirect_to pago_path(@pago), notice: 'Se Actualizaron los datos'}
+        redirect_to pago_path(@pago), notice: 'Se Actualizaron los datos'
       else
         render :editar
       end
-    end
   end
 
   def editar
