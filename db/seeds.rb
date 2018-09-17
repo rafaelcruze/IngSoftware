@@ -12,12 +12,54 @@
                       {descripcion: 'Tia'
     }])
 
+    Comuna.create!([{
+                    descripcion: 'Santiago'},
+                    {descripcion: 'Cerrillos'},
+                    {descripcion: 'Cerro Navia'},
+                    {descripcion: 'Conchalí'},
+                    {descripcion: 'El Bosque'},
+                    {descripcion: 'Estación Central'},
+                    {descripcion: 'Huechuraba'},
+                    {descripcion: 'Independencia'},
+                    {descripcion: 'La Cisterna'},
+                    {descripcion: 'La Florida'},
+                    {descripcion: 'La Granja'},
+                    {descripcion: 'La Pintana'},
+                    {descripcion: 'La Reina'},
+                    {descripcion: 'Las Condes'},
+                    {descripcion: 'Lo Barnechea'},
+                    {descripcion: 'Lo Espejo'},
+                    {descripcion: 'Lo Prado'},
+                    {descripcion: 'Macul'},
+                    {descripcion: 'Maipú'},
+                    {descripcion: 'Nunoa'},
+                    {descripcion: 'Pedro Aguirre Cerda'},
+                    {descripcion: 'Peñalolén'},
+                    {descripcion: 'Providencia'},
+                    {descripcion: 'Pudahuel'},
+                    {descripcion: 'Quilicura'},
+                    {descripcion: 'Quinta Normal'},
+                    {descripcion: 'Recoleta'},
+                    {descripcion: 'Renca'},
+                    {descripcion: 'San Joaquín'},
+                    {descripcion: 'San Miguel'},
+                    {descripcion: 'San Ramón'},
+                    {descripcion: 'Vitacura'
+
+      }])
+
 User.create!([{
+                nombres: 'Rafael',
+                apellidos: 'Cruz',
+                rut: '18.740.172-0',
+                fecha_nacimiento: '11/06/1994',
+                celular: '957802081',
+                direccion: 'Schubert 1134',
                 email: 'admin@admin.com',
                 password: '123456',
                 password_confirmation: '123456',
                 tipo_usuario_id: (TipoUsuario.find_by_descripcion('Administrador')).id,
-                comuna_id: (Comuna.find_by_descripcion('La Florida'))
+                comuna_id: '1'
   }])
 
 Estado.create!([{
@@ -53,39 +95,3 @@ TipoPago.create!([{
                   descripcion: 'Matrícula'},
                   {descripcion: 'Mensualidad'
   }])
-
-  Comuna.create!([{
-                  descripcion: 'Santiago'},
-                  {descripcion: 'Cerrillos'},
-                  {descripcion: 'Cerro Navia'},
-                  {descripcion: 'Conchalí'},
-                  {descripcion: 'El Bosque'},
-                  {descripcion: 'Estación Central'},
-                  {descripcion: 'Huechuraba'},
-                  {descripcion: 'Independencia'},
-                  {descripcion: 'La Cisterna'},
-                  {descripcion: 'La Florida'},
-                  {descripcion: 'La Granja'},
-                  {descripcion: 'La Pintana'},
-                  {descripcion: 'La Reina'},
-                  {descripcion: 'Las Condes'},
-                  {descripcion: 'Lo Barnechea'},
-                  {descripcion: 'Lo Espejo'},
-                  {descripcion: 'Lo Prado'},
-                  {descripcion: 'Macul'},
-                  {descripcion: 'Maipú'},
-                  {descripcion: 'Nunoa'},
-                  {descripcion: 'Pedro Aguirre Cerda'},
-                  {descripcion: 'Peñalolén'},
-                  {descripcion: 'Providencia'},
-                  {descripcion: 'Pudahuel'},
-                  {descripcion: 'Quilicura'},
-                  {descripcion: 'Quinta Normal'},
-                  {descripcion: 'Recoleta'},
-                  {descripcion: 'Renca'},
-                  {descripcion: 'San Joaquín'},
-                  {descripcion: 'San Miguel'},
-                  {descripcion: 'San Ramón'},
-                  {descripcion: 'Vitacura'
-
-    }])

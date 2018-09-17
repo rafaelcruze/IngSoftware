@@ -29,6 +29,7 @@
                       method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
     </tr>
     <%end%>
+    <%= will_paginate @estudiantes , renderer: BootstrapPagination::Rails %>
   </tbody>
 </table>
 </div>
