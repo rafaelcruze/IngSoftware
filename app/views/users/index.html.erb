@@ -4,9 +4,13 @@
 </head>
 <body></body>
 <div class="container">
+  <div class="derecha">
+<a href="/users/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a>
+</div>
   <table class="table table-condensed table-bordered">
     <thead>
     <tr>
+      <th>Número</th>
       <th>Nombres</th>
       <th>Apellidos</th>
       <th colspan="3"></th>
@@ -15,6 +19,7 @@
     <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id%></td>
         <td><%= user.nombres%></td>
         <td><%= user.apellidos%></td>
         <td><%= link_to 'Mostrar', user_url(user), class: "btn btn-primary" %></td>
@@ -25,7 +30,6 @@
     <% end %>
     </tbody>
   </table>
-  <a href="/users/nuevo" class="btn btn-success btn-lg btn-block" role="button" aria-pressed="true">Nuevo</a>
 </div>
 </body>
 </html>

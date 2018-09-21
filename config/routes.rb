@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
+  root to: "bienvenido#index"
+
+  resources :questions do
+    resources :answers
+  end
+
+
   devise_for :users, :skip => [:registrations]
   as :user do
   get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
   put 'users' => 'devise/registrations#update', :as => 'user_registration'
 end
-
-  root to: "bienvenido#index"
 
   #CRUD USERS
   get '/users', to: 'users#index', as: 'users'

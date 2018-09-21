@@ -11,6 +11,7 @@
 <table class="table table-condensed table-bordered">
   <thead>
   <tr>
+    <th>Número</th>
     <th>Nombres</th>
     <th>Apellidos</th>
     <th>Rut</th>
@@ -20,6 +21,7 @@
   <tbody>
   <% @estudiantes.each do |estudiante| %>
     <tr>
+      <td><%= estudiante.id %></td>
       <td><%= estudiante.nombres %></td>
       <td><%= estudiante.apellidos %></td>
       <td><%= estudiante.rut %></td>

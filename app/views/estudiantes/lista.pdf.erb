@@ -2,6 +2,7 @@
 <table class="table">
   <thead>
   <tr>
+    <th style="width: 200px;">Número</th>
     <th style="width: 200px;">Nombres</th>
     <th style="width: 200px;">Apellidos</th>
     <th style="width: 200px;">Rut</th>
@@ -10,6 +11,7 @@
   <tbody>
   <% @estudiantes.each do |estudiante| %>
     <tr>
+      <td><%= estudiante.id %></td>
       <td><%= estudiante.nombres %></td>
       <td><%= estudiante.apellidos %></td>
       <td><%= estudiante.rut %></td>

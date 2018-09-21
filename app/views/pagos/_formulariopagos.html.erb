@@ -1,9 +1,13 @@
 <%= form_for(@pago, :html => {:role => 'form'}) do |f| %>
   <% if @pago.errors.any? %>
+  <div class="alert alert-info">
     <%= pluralize(@pago.errors.count, "Errores") %>
+  </div>
+  <div class="alert alert-danger">
     <% @pago.errors.full_messages.each do |error| %>
-      <%= error %>
+      <%= error %><br>
     <% end %>
+  </div>
   <% end %>
 
   <h1>Registro de Pagos</h1>
@@ -53,5 +57,5 @@
                TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
   </p>
 
-  <%= f.submit 'Guardar Pago'%>
+  <%= f.submit 'Guardar Pago', class:"btn btn-success"%>
 <% end %>

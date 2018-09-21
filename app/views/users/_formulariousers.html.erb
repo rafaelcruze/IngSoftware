@@ -1,28 +1,25 @@
 <%= form_for(@user, :html => {:role => 'form'}) do |f| %>
   <% if @user.errors.any? %>
+  <div class="alert alert-info">
     <%= pluralize(@user.errors.count, "Errores") %>
+  </div>
+  <div class="alert alert-danger">
     <% @user.errors.full_messages.each do |error| %>
-      <%= error %>
+      <%= error %><br>
     <% end %>
+  </div>
     <% end %>
 
 <div class="form">
   <h1 class="text-center"> Registro de Usuarios</h1>
 
   <div class="row">
-    <div class="col">
-<div class="field">
-  <%= f.label :Tipo_de_usuario %>
-  <%= f.select('tipo_usuario_id',
-               TipoUsuario.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
-</div>
-  </div>
 
   <div class="col">
   <div class="field">
     <%= f.label :nombres %><br/>
     <%= f.text_field :nombres, autofocus: true, class: "form-control", placeholder: "Nombres" %>
-  </div>
+  </div><br>
 </div>
 
   <div class="col">
@@ -37,7 +34,7 @@
   <div class="field">
     <%= f.label :rut %><br/>
     <%= f.text_field :rut, autofocus: true, class:"form-control", placeholder: "Rut" %>
-  </div>
+  </div><br>
 </div>
   <div class="col">
   <div class="field">
@@ -60,7 +57,7 @@
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
     <%= f.password_field :password, autocomplete: "off", class:"form-control" , placeholder:"Contraseña"%>
-  </div>
+  </div><br>
 </div>
 <div class="col">
   <div class="field">
@@ -78,7 +75,7 @@
 </div>
 <div class="col">
 <div class="field">
-  <%= f.label :comuna %>
+  <%= f.label :comuna %><br>
   <%= f.select('comuna_id',
                Comuna.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
 </div>
@@ -90,8 +87,13 @@
 </div>
 </div>
 </div>
+<div class="field">
+  <%= f.label :Tipo_de_usuario %>
+  <%= f.select('tipo_usuario_id',
+               TipoUsuario.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+</div><br>
   <div class="actions">
-    <%= f.submit "Guardar Usuario" %>
+    <%= f.submit "Guardar Usuario" ,class:"btn btn-success"%>
   </div>
 <% end %>
 </div>

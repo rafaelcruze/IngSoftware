@@ -9,3 +9,18 @@
 .boton{
 	float: right;
 }
+
+.panel-group{
+	border-style: solid;
+	height: 200px;
+	width: 1100px;
+	border: 2px solid;
+    border-radius: 5px;
+}
+
+.panel-heading{
+	background-color: blue;
+	color: white;
+	border-radius: 3px;
+}
+

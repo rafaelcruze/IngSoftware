@@ -1,9 +1,13 @@
 <%= form_for(@agenda, :html => {:role => 'form'}) do |f| %>
   <% if @agenda.errors.any? %>
+  <div class="alert alert-info">
     <%= pluralize(@agenda.errors.count, "Errores") %>
+  </div>
+  <div class="alert alert-danger">
     <% @agenda.errors.full_messages.each do |error| %>
-      <%= error %>
+      <%= error %><br>
     <% end %>
+  </div>
   <% end %>
 
   <h1>Crear Comentario</h1>
@@ -26,5 +30,5 @@
   <%= f.label :comentario %><br>
   <%= f.text_area :comentario %>
   </p>
-  <%= f.submit 'Guardar comentario'%>
+  <%= f.submit 'Guardar comentario',class:"btn btn-success"%>
 <% end %>

@@ -3,11 +3,12 @@
   <div class="alert alert-info">
     <%= pluralize(@estudiante.errors.count, "Errores") %>
   </div>
+  <div class="alert alert-danger">
     <% @estudiante.errors.full_messages.each do |error| %>
-    <div class="alert alert-danger">
-      <%= error %>
-</div>
+      <%= error %><br>
+
     <% end %>
+    </div>
   <% end %>
 
 <div class="form">
@@ -51,25 +52,25 @@
   <div class="row">
     <div class="col">
 
-        <%= f.label :comuna %>
+        <%= f.label :comuna %><br>
         <%= f.select('comuna_id',
                      Comuna.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
 
     </div>
     <div class="col">
-        <%= f.label :nivel_educacional %>
+        <%= f.label :nivel_educacional %><br>
         <%= f.select('nivel_educacional_id',
                      NivelEducacional.all.collect {|c| [c.descripcion, c.id]}) %>
     </div>
 
     <div class="col">
-      <%= f.label :jornada %>
+      <%= f.label :jornada %><br>
       <%= f.select('jornada_id',
                    Jornada.all.collect {|c| [c.descripcion, c.id]}) %>
     </div>
 
     <div class="col">
-      <%= f.label :apoderado%>
+      <%= f.label :apoderado%><br>
       <%= f.select('users_id',
                    User.all.collect {|c| [c.nombres, c.id]}) %>
     </div>
