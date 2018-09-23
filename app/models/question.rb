@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-	has_many :user
+	has_one :user
 	has_many :answers
 end

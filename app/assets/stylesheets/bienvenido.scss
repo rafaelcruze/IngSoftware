@@ -2,7 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+a:visited{
+	text-decoration: none;	
+}
+
 .nav-item{
-  font-style: oblique;
   font-size: larger;
+}
+
+.navbar{
+	background-color: #C33325;
+}
+
+.nav-link{
+	color: #F0F1D5;
+}
+
+.navbar-brand{
+	color: #F0F1D5;
 }

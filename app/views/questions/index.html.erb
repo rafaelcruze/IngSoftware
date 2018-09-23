@@ -10,13 +10,10 @@
       <h3> <%= question.content %> </h3>
       <br>
 
-      
+     
       <%= link_to 'Editar', edit_question_path(question) %>
-     
-
-     
       <%= link_to 'Eliminar', question, method: :delete, data: {confirm: "Estás seguro?"} %>
-      
+  
 
 
       <% if question.answers.any? %>
