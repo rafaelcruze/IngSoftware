@@ -17,6 +17,7 @@ class Ability
         can :create, Question
         can :update, Question
         can :create, Answer
+        can :index, Agenda
     end
     if user.tipo_usuario.descripcion == "Tia"
         cannot :manage, User
