@@ -1,7 +1,18 @@
-<% @pago.estudiante.nombres%>
-<%= @pago.valor %>
-<%= @pago.saldo %>
-<%= @pago.abono %>
-<%= @pago.fecha_pago%>
-<%= @pago.estado.descripcion %>
-<%= @pago.tipo_pago.descripcion %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="container-form">
+  <h1>Estudiante: <%= @pago.estudiante.nombres%> <%= @pago.estudiante.apellidos%><h1>
+<h1>Valor: <%= @pago.valor %></h1>
+<h1>Saldo: <%= @pago.saldo %></h1>
+<h1>Abono: <%= @pago.abono %></h1>
+<h1>Fecha: <%= @pago.fecha_pago%></h1>
+<h1>Estado: <%= @pago.estado.descripcion %></h1>
+<h1>Tipo de pago: <%= @pago.tipo_pago.descripcion %></h1>
+</div>
+</body>
+</html>

@@ -1,9 +1,15 @@
 class PagosController < ApplicationController
+  load_and_authorize_resource
   before_action :set_pago, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
     @pagos = Pago.all
+    respond_to do |format|
+    format.html
+    format.json
+    format.pdf {render template: 'pagos/listapagos', pdf: 'Listapagos', layout: 'lista.html'}
   end
+end
 
   def mostrar
 

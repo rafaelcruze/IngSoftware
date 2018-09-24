@@ -11,51 +11,54 @@
   <% end %>
 
   <h1>Registro de Pagos</h1>
-
-  <p>
-    <%= f.label :apoderado %>
+ 
+ <div class="form">
+   <div class="field"><br>
+    <%= f.label :apoderado, autofocus: true %>
     <%= f.select('users_id',
                  User.all.collect {|c| [c.nombres, c.id]}) %>
-  </p>
+   </div>
 
-  <p>
-    <%= f.label :estudiante %>
+  <div class="field"><br>
+    <%= f.label :estudiante,autofocus: true %>
     <%= f.select('estudiante_id',
                  Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :valor %>
+  <div class="field"><br>
+    <%= f.label :valor, autofocus: true, placeholder: "Valor" %>
     <%= f.text_field :valor %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :abono %>
+  <div class="field"><br>
+    <%= f.label :abono,autofocus: true, placeholder: "Abono" %>
     <%= f.text_field :abono %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :saldo %>
+  <div class="field"><br>
+    <%= f.label :saldo,autofocus: true, placeholder: "Saldo" %>
     <%= f.text_field :saldo %>
-  </p>
+  </div>
 
-  <p>
+  <div class="field"><br>
     <%= f.label :fecha_pago %>
-    <%= f.text_field :fecha_pago %>
-  </p>
+    <%= f.date_field :fecha_pago %>
+  </div>
 
 
-  <p>
+  <div class="field"><br>
     <%= f.label :estado %>
     <%= f.select('estado_id',
                Estado.all.collect { |c| [c.descripcion, c.id] }) %>
-  </p>
+  </div>
 
-  <p>
+  <div class="field"><br>
     <%= f.label :tipopago %>
     <%= f.select('tipo_pago_id',
                TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
-  </p>
-
+  </div>
+</div>
+<div class="actions"><br>
   <%= f.submit 'Guardar Pago', class:"btn btn-success"%>
+</div>
 <% end %>

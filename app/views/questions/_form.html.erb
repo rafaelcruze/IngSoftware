@@ -1,22 +1,23 @@
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <div class="alert alert-info">
+      <%= pluralize(question.errors.count, "Error") %> 
+    </div>
 
       <ul>
+        <div class="alert alert-danger">
       <% question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
+    </div>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :Contenido %>
-    <%= form.text_field :content, id: :question_content %>
-  </div>
-
-  <div class="actions">
+    <%= form.label :Contenido %><br>
+    <%= form.text_area :content, id: :question_content %>
+  </div><br>
     <%= form.submit "Crear Consulta", class:"btn btn-success" %>
-  </div>
 <% end %>

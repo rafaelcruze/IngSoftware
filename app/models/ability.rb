@@ -8,7 +8,27 @@ class Ability
     if user.tipo_usuario.descripcion == "Administrador"
         can :manage, :all
     end
-        
+    if user.tipo_usuario.descripcion == "Apoderado"
+        cannot :manage, User
+        cannot :manage, Estudiante
+        cannot :manage, Pago
+        can :index, Question
+        can :show, Question
+        can :create, Question
+        can :update, Question
+        can :create, Answer
+    end
+    if user.tipo_usuario.descripcion == "Tia"
+        cannot :manage, User
+        can :index, Estudiante
+        can :mostrar, Estudiante
+        cannot :manage, Pago
+        can :index, Question
+        can :show, Question
+        can :create, Question
+        can :update, Question
+        can :create, Answer
+    end
             
     # Define abilities for the passed in user here. For example:
     #

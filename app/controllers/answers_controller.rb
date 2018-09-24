@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
 
-
+load_and_authorize_resource
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answers_params)
