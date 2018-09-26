@@ -49,8 +49,10 @@
       }])
 
 User.create!([{
-                nombres: 'Rafael',
-                apellidos: 'Cruz',
+                nombreuno: 'Rafael',
+                nombredos: 'Ignacio',
+                apellidouno: 'Cruz',
+                apellidodos: 'Escobar',
                 rut: '18.740.172-0',
                 fecha_nacimiento: '11/06/1994',
                 celular: '957802081',
