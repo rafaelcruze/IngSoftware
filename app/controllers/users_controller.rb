@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nombres, :apellidos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :celular, :email, :password, :password_confirmation, :tipo_usuario_id)
+    params.require(:user).permit(:nombreuno, :nombredos, :apellidouno, :apellidodos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :celular, :email, :password, :password_confirmation, :tipo_usuario_id)
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end

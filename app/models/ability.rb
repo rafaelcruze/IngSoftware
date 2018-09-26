@@ -6,29 +6,75 @@ class Ability
     user ||= User.new
 
     if user.tipo_usuario.descripcion == "Administrador"
-        can :manage, :all
+        can :manage, User
+        can :manage, Estudiante
+        can :manage, Pago
+        can :index, Agenda
+        can :update, Question do |questions|
+            questions.user == user
+        end
+
+        can :destroy, Question do |questions|
+            questions.user == user
+        end
+
+
+        can :destroy, Answer do |answers|
+            answers.user == user
+        end
+        can :index, Question
+        can :show, Question
     end
     if user.tipo_usuario.descripcion == "Apoderado"
-        cannot :manage, User
-        cannot :manage, Estudiante
-        cannot :manage, Pago
         can :index, Question
         can :show, Question
         can :create, Question
-        can :update, Question
+        can :update, Question do |questions|
+            questions.user == user
+        end
+
+        can :destroy, Question do |questions|
+            questions.user == user
+        end
+
+
+        can :destroy, Answer do |answers|
+            answers.user == user
+        end
         can :create, Answer
-        can :index, Agenda
     end
     if user.tipo_usuario.descripcion == "Tia"
-        cannot :manage, User
-        can :index, Estudiante
-        can :mostrar, Estudiante
-        cannot :manage, Pago
+        #Permisos de Questions y Answers
+
         can :index, Question
         can :show, Question
         can :create, Question
-        can :update, Question
+        can :update, Question do |questions|
+            questions.user == user
+        end
+
+        can :destroy, Question do |questions|
+            questions.user == user
+        end
+
+
+        can :destroy, Answer do |answers|
+            answers.user == user
+        end
         can :create, Answer
+
+        #Permisos de Agendas
+
+        can :index, Agenda
+        can :mostrar, Agenda
+        can :nuevo, Agenda
+        can :crear, Agenda
+        can :update, Agenda
+        can :eliminar, Agenda
+
+        #Permisos de Estudiantes
+
+        can :index, Estudiante
     end
             
     # Define abilities for the passed in user here. For example:

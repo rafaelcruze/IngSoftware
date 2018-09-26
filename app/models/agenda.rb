@@ -1,5 +1,5 @@
 class Agenda < ApplicationRecord
-  has_many :user
+  belongs_to :user
   belongs_to :estudiante
 
   validates :comentario, presence: { message: 'Ingrese algún comentario'}

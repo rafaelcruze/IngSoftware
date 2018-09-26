@@ -14,17 +14,13 @@
 
   <p>
     <%= f.label :usuario %>
-    <%= f.select('users_id',
-                 User.all.collect {|c| [c.nombres, c.id]}) %>
+    <%= f.select('user_id',
+                 User.all.collect {|c| [c.nombreuno, c.id]}) %>
   </p>
   <p>
     <%= f.label :estudiante %>
     <%= f.select('estudiante_id',
-                 Estudiante.all.collect {|c| [c.nombres, c.id]}) %>
-  </p>
-  <p>
-  <%= f.label :fecha %>
-  <%= f.date_field :fecha %>
+                 Estudiante.all.collect {|c| [c.nombreuno, c.id]}) %>
   </p>
   <p>
   <%= f.label :comentario %><br>

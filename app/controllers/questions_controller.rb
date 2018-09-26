@@ -21,8 +21,8 @@ class QuestionsController < ApplicationController
 
 
   def create
-    @question = current_user
-    @question = Question.new(question_params)
+    @user = current_user
+    @question = @user.questions.build(question_params)
 
     respond_to do |format|
       if @question.save

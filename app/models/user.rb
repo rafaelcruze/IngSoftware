@@ -12,9 +12,13 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
 
-  validates :nombres , presence:  { message: 'Ingrese los nombres '} , length: {in: 3..20, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
+  validates :nombreuno , presence:  { message: 'Ingrese el primer nombre '} , length: {in: 3..20, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
     message: "Se permiten solo letras en los nombres"}
-  validates :apellidos , presence: { message: 'Ingrese los apellidos'}, length: {in: 3..20, message:'El apellido debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
+  validates :apellidouno , presence: { message: 'Ingrese el primer apellido'}, length: {in: 3..20, message:'El apellido debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
+    message: "Se permiten solo letras en los apellidos"}
+    validates :nombredos , presence:  { message: 'Ingrese el segundo nombre '} , length: {in: 3..20, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
+    message: "Se permiten solo letras en los nombres"}
+  validates :apellidodos , presence: { message: 'Ingrese el segundo apellido'}, length: {in: 3..20, message:'El apellido debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z]+\z/,
     message: "Se permiten solo letras en los apellidos"}
   VALID_RUT_REGEX = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i
   validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true, format: {with: VALID_RUT_REGEX}

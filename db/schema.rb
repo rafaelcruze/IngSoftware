@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180921042704) do
+ActiveRecord::Schema.define(version: 20180926013502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180921042704) do
     t.date "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "users_id"
+    t.integer "user_id"
     t.integer "estudiante_id"
   end
 
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20180921042704) do
   end
 
   create_table "estudiantes", force: :cascade do |t|
-    t.string "nombres"
-    t.string "apellidos"
+    t.string "nombreuno"
+    t.string "apellidouno"
     t.string "rut"
     t.date "fecha_nacimiento"
     t.integer "comuna_id"
@@ -54,9 +54,11 @@ ActiveRecord::Schema.define(version: 20180921042704) do
     t.integer "jornada_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "users_id"
+    t.integer "user_id"
     t.string "direccion"
     t.text "observacion"
+    t.string "nombredos"
+    t.string "apellidodos"
   end
 
   create_table "jornadas", force: :cascade do |t|
@@ -77,7 +79,7 @@ ActiveRecord::Schema.define(version: 20180921042704) do
     t.integer "tipo_pago_id"
     t.integer "estado_id"
     t.integer "estudiante_id"
-    t.integer "users_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "saldo"
@@ -116,28 +118,30 @@ ActiveRecord::Schema.define(version: 20180921042704) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nombres"
-    t.string "apellidos"
+    t.string "nombreuno"
+    t.string "apellidouno"
     t.string "rut"
     t.date "fecha_nacimiento"
     t.string "direccion"
     t.integer "comuna_id"
     t.integer "celular"
     t.integer "tipo_usuario_id"
+    t.string "nombredos"
+    t.string "apellidodos"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "agendas", "estudiantes"
-  add_foreign_key "agendas", "users", column: "users_id"
+  add_foreign_key "agendas", "users"
   add_foreign_key "estudiantes", "comunas"
   add_foreign_key "estudiantes", "jornadas"
   add_foreign_key "estudiantes", "nivel_educacionals"
-  add_foreign_key "estudiantes", "users", column: "users_id"
+  add_foreign_key "estudiantes", "users"
   add_foreign_key "pagos", "estados"
   add_foreign_key "pagos", "estudiantes"
   add_foreign_key "pagos", "tipo_pagos"
-  add_foreign_key "pagos", "users", column: "users_id"
+  add_foreign_key "pagos", "users"
   add_foreign_key "questions", "users"
   add_foreign_key "users", "comunas"
   add_foreign_key "users", "tipo_usuarios"

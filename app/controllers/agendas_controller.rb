@@ -36,7 +36,9 @@ class AgendasController < ApplicationController
   end
 
   def crear
+    @user = current_user
     @agenda = Agenda.new(agenda_params)
+    @agenda.fecha = Time.now
     respond_to do |format|
       if @agenda.save
         format.html {redirect_to agenda_path(@agenda), notice: 'Se Persistio la agenda'}
@@ -49,7 +51,7 @@ class AgendasController < ApplicationController
   private
 
   def agenda_params
-    params.require(:agenda).permit(:comentario, :fecha, :usuario_id, :estudiante_id)
+    params.require(:agenda).permit(:comentario, :fecha, :user_id, :estudiante_id)
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end

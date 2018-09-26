@@ -17,15 +17,32 @@
 
   <div class="col">
   <div class="field">
-    <%= f.label :nombres %><br/>
-    <%= f.text_field :nombres, autofocus: true, class: "form-control", placeholder: "Nombres" %>
+    <%= f.label :primer_nombre %><br/>
+    <%= f.text_field :nombreuno, autofocus: true, class: "form-control", placeholder: "Primer nombre" %>
   </div><br>
 </div>
 
   <div class="col">
   <div class="field">
-    <%= f.label :apellidos %><br/>
-    <%= f.text_field :apellidos, autofocus: true, class: "form-control", placeholder: "Apellidos" %>
+    <%= f.label :primer_apellido %><br/>
+    <%= f.text_field :apellidouno, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col">
+  <div class="field">
+    <%= f.label :segundo_nombre %><br/>
+    <%= f.text_field :nombredos, autofocus: true, class: "form-control", placeholder: "Primer nombre" %>
+  </div><br>
+</div>
+
+  <div class="col">
+  <div class="field">
+    <%= f.label :segundo_apellido %><br/>
+    <%= f.text_field :apellidodos, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
   </div>
   </div>
 </div>

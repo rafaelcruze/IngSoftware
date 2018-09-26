@@ -2,16 +2,16 @@
 <table class="table">
   <thead>
   <tr>
-    <th style="width: 200px;">Nombres</th>
-    <th style="width: 200px;">Apellidos</th>
+    <th style="width: 200px;">Nombre</th>
+    <th style="width: 200px;">Apellido</th>
     <th style="width: 200px;">Rut</th>
   </tr>
   </thead>
   <tbody>
   <% @estudiantes.each do |estudiante| %>
     <tr>
-      <td><%= estudiante.nombres %></td>
-      <td><%= estudiante.apellidos %></td>
+      <td><%= estudiante.nombreuno %></td>
+      <td><%= estudiante.apellidouno %></td>
       <td><%= estudiante.rut %></td>
     </tr>
     <%end%>

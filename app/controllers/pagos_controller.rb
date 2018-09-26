@@ -53,7 +53,7 @@ end
     private
 
     def pago_params
-      params.require(:pago).permit(:valor,:fecha_pago, :saldo, :abono, :estudiante_id, :users_id,:tipo_pago_id, :estado_id)
+      params.require(:pago).permit(:valor,:fecha_pago, :saldo, :abono, :estudiante_id, :user_id,:tipo_pago_id, :estado_id)
       #jamas nunca poner ID en strongs paramas
       #tampoco updated_at  created_at
     end

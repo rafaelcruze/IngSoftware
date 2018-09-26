@@ -24,7 +24,7 @@
   <tbody>
   <% @pagos.each do |pago| %>
     <tr>
-      <td><%= pago.estudiante.nombres%></td>  
+      <td><%= pago.estudiante.nombreuno%> <%= pago.estudiante.apellidouno %></td>  
       <td><%= pago.valor %></td>
       <td><%= pago.abono %></td>
       <td><%= pago.saldo%></td>
