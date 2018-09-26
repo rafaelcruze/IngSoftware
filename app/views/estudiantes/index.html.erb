@@ -14,6 +14,7 @@
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Rut</th>
+    <th>Estado</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -23,10 +24,13 @@
       <td><%= estudiante.nombreuno %></td>
       <td><%= estudiante.apellidouno %></td>
       <td><%= estudiante.rut %></td>
+      <td><%= estudiante.estado %></td>
       <td><%= link_to 'Mostrar', estudiante_url(estudiante), class: "btn btn-primary" %></td>
       <td><%= link_to 'Editar', editar_estudiante_url(estudiante), class: "btn btn-warning" %></td>
-      <td><%= link_to 'Eliminar', estudiante_path(estudiante), class: "btn btn-danger",
+      <% if estudiante.estado == true %>
+      <td><%= link_to 'Cambiar estado', estudiante_path(estudiante), class: "btn btn-danger",
                       method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+                      <% end %>
     </tr>
     <%end%>
     <%= will_paginate @estudiantes , renderer: BootstrapPagination::Rails %>

@@ -5,15 +5,19 @@
     <th style="width: 200px;">Nombre</th>
     <th style="width: 200px;">Apellido</th>
     <th style="width: 200px;">Rut</th>
+    <th style="width: 200px;">Estado</th>
   </tr>
   </thead>
   <tbody>
   <% @estudiantes.each do |estudiante| %>
+  <% if estudiante.estado == true%>
     <tr>
       <td><%= estudiante.nombreuno %></td>
       <td><%= estudiante.apellidouno %></td>
       <td><%= estudiante.rut %></td>
+      <td><%= estudiante.estado %></td>
     </tr>
+    <% end %>
     <%end%>
   </tbody>
 </table>

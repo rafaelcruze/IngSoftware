@@ -92,6 +92,12 @@
       <%= f.select('user_id',
                    User.all.collect {|c| [c.nombreuno, c.id]}) %>
     </div>
+
+
+    <div class="field">
+    <%= f.label "Estado" %> <br />
+    <%= f.check_box :estado %> <br />
+</div>
   </div>
   <div class="btn">
   <%= f.submit 'Guardar Estudiante', class:"btn btn-success"%>

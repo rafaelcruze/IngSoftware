@@ -17,11 +17,11 @@ class EstudiantesController < ApplicationController
 
   def eliminar
     #@estudiante.nombres ="eliminado"
-    #@estudiante.estado = false
-    #@estudiante.save
-    @estudiante.destroy
+    @estudiante.estado = false
+    @estudiante.save
+    #@estudiante.destroy
     respond_to do |format|
-      format.html {redirect_to estudiantes_path, notice: 'eliminado'}
+      format.html {redirect_to estudiantes_path, notice: 'Estudiante no regular'}
     end
   end
 
@@ -56,7 +56,7 @@ class EstudiantesController < ApplicationController
   private
 
   def estudiante_params
-    params.require(:estudiante).permit(:nombreuno, :nombredos, :apellidouno, :apellidodos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :nivel_educacional_id, :jornada_id, :user_id)
+    params.require(:estudiante).permit(:nombreuno, :nombredos, :apellidouno, :apellidodos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :nivel_educacional_id, :jornada_id, :user_id, :estado)
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end

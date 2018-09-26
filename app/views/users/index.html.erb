@@ -12,6 +12,7 @@
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
     </thead>
@@ -20,10 +21,13 @@
       <tr>
         <td><%= user.nombreuno%></td>
         <td><%= user.apellidouno%></td>
+        <td><%= user.estado%></td>
         <td><%= link_to 'Mostrar', user_url(user), class: "btn btn-primary" %></td>
         <td><%= link_to 'Editar', editar_user_url(user), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Eliminar', user_path(user), class: "btn btn-danger",
+        <% if user.estado == true %>
+        <td><%= link_to 'Cambiar estado', user_path(user), class: "btn btn-danger",
                         method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+                        <% end %>
       </tr>
     <% end %>
     </tbody>

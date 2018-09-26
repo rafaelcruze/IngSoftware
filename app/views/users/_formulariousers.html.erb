@@ -108,7 +108,8 @@
   <%= f.label :Tipo_de_usuario %>
   <%= f.select('tipo_usuario_id',
                TipoUsuario.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
-</div><br>
+</div>
+
   <div class="actions">
     <%= f.submit "Guardar Usuario" ,class:"btn btn-success"%>
   </div>

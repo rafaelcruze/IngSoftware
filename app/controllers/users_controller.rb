@@ -10,9 +10,11 @@ class UsersController < ApplicationController
   end
 
   def eliminar
-    @user.destroy
+    #@user.destroy
+    @user.estado = false
+    @user.save
     respond_to do |format|
-      format.html {redirect_to users_path, notice: 'eliminado'}
+      format.html {redirect_to users_path, notice: 'Apoderado no regular'}
     end
   end
 
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html {redirect_to user_path(@user), notice: 'Se Persistio la estudiante'}
+        format.html {redirect_to user_path(@user), notice: 'Se Registro Usuario'}
       else
         format.html {render :nuevo}
       end
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nombreuno, :nombredos, :apellidouno, :apellidodos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :celular, :email, :password, :password_confirmation, :tipo_usuario_id)
+    params.require(:user).permit(:nombreuno, :nombredos, :apellidouno, :apellidodos, :rut, :fecha_nacimiento, :direccion, :comuna_id, :celular, :email, :password, :password_confirmation, :tipo_usuario_id, :estado)
     #jamas nunca poner ID en strongs paramas
     #tampoco updated_at  created_at
   end

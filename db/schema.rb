@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180926013502) do
+ActiveRecord::Schema.define(version: 20180926061218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180926013502) do
     t.text "observacion"
     t.string "nombredos"
     t.string "apellidodos"
+    t.boolean "estado", default: true
   end
 
   create_table "jornadas", force: :cascade do |t|
@@ -128,6 +129,7 @@ ActiveRecord::Schema.define(version: 20180926013502) do
     t.integer "tipo_usuario_id"
     t.string "nombredos"
     t.string "apellidodos"
+    t.boolean "estado", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

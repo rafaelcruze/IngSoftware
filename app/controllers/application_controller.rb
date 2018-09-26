@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up)  { |u| u.permit(  :email,:password, :password_confirmation, :nombreuno, :nombredos, :apellidouno, :apellidodos, :direccion, :celular, :rut, :comuna_id, :tipo_usuario_id,
-      :fecha_nacimiento) }
+      :fecha_nacimiento, :estado) }
   end
 
   layout :manejo_vista_admin
