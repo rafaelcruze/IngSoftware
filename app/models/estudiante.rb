@@ -22,6 +22,7 @@ class Estudiante < ApplicationRecord
   validates :nivel_educacional_id , presence: { message: 'Seleccione algún nivel educacional'}
   validates :fecha_nacimiento , presence: {message: 'Ingrese la fecha de nacimiento'}
   validate :fecha_de_nacimiento_debe_ser_en_pasado
+  validate :fechaminima
 
 
   def fecha_de_nacimiento_debe_ser_en_pasado
@@ -29,4 +30,11 @@ class Estudiante < ApplicationRecord
       errors.add(:fecha_nacimiento, "debe ser anterior a la fecha de hoy")
     end
 end
+
+  def fechaminima
+      if fecha_nacimiento.present? && fecha_nacimiento <= 4.year.ago
+        errors.add(:fecha_nacimiento, "debe ser menor de 4 años  ")
+    end
+  end
+
 end

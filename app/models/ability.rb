@@ -6,24 +6,7 @@ class Ability
     user ||= User.new
 
     if user.tipo_usuario.descripcion == "Administrador"
-        can :manage, User
-        can :manage, Estudiante
-        can :manage, Pago
-        can :index, Agenda
-        can :update, Question do |questions|
-            questions.user == user
-        end
-
-        can :destroy, Question do |questions|
-            questions.user == user
-        end
-
-
-        can :destroy, Answer do |answers|
-            answers.user == user
-        end
-        can :index, Question
-        can :show, Question
+        can :manage, :all
     end
     if user.tipo_usuario.descripcion == "Apoderado"
         can :index, Question
@@ -69,8 +52,12 @@ class Ability
         can :mostrar, Agenda
         can :nuevo, Agenda
         can :crear, Agenda
-        can :update, Agenda
-        can :eliminar, Agenda
+        can :update, Agenda do  |agendas|
+            agendas.user == user
+        end
+        can :eliminar, Agenda do |agendas|
+            agendas.user == user
+        end
 
         #Permisos de Estudiantes
 

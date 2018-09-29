@@ -37,7 +37,7 @@ class AgendasController < ApplicationController
 
   def crear
     @user = current_user
-    @agenda = Agenda.new(agenda_params)
+    @agenda = @user.agendas.new(agenda_params)
     @agenda.fecha = Time.now
     respond_to do |format|
       if @agenda.save

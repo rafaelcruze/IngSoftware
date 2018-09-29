@@ -14,13 +14,15 @@
             <h4> Comentario</h4><%= agenda.comentario %><br>
             <%= agenda.fecha %>
             
-           
+           <% if can? :update, agenda %>
             <%= link_to 'Editar', editar_agenda_url(agenda),class:"btn btn-warning" %>
-          
+          <% end %>
            
+           <% if can? :eliminar, agenda %>
             <%= link_to 'Eliminar', agenda_path(agenda),
               method: :delete,
               data: {confirm: '¿Estas seguro?'}, class:"btn btn-danger" %>
+              <% end %>
              
       </div>
 <% end %>

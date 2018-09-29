@@ -11,12 +11,7 @@
   <% end %>
 
   <h1>Crear Comentario</h1>
-
-  <p>
-    <%= f.label :usuario %>
-    <%= f.select('user_id',
-                 User.all.collect {|c| [c.nombreuno, c.id]}) %>
-  </p>
+  
   <p>
     <%= f.label :estudiante %>
     <%= f.select('estudiante_id',
