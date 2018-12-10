@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'search/create'
+
   root to: "bienvenido#index"
 
   resources :questions do
