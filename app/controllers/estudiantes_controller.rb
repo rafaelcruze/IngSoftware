@@ -3,13 +3,14 @@ class EstudiantesController < ApplicationController
   before_action :set_estudiante, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
-    @estudiantes = Estudiante.all
-    @estudiantes = Estudiante.paginate(:page => params[:page], :per_page =>10)
+    #@estudiantes = Estudiante.paginate(:page => params[:page], :per_page =>10)
+    @estudiantes = Estudiante.search(params[:search])
     respond_to do |format|
       format.html
       format.json
       format.pdf {render template: 'estudiantes/lista', pdf: 'Lista', layout: 'lista.html'}
     end
+
   end
 
   def mostrar
