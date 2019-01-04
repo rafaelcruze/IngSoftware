@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-  <head>
-    <title>Software</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> 
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <%= render 'bienvenido/header' %>
-  <body>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
-  <br>
-  <div class="container">
-    <%= yield %>
-  </div>
-  </body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<head>
+  <title>Software</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<%= render 'bienvenido/header' %>
+<body>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+  <%= yield %>
+</body>
+<footer>
+<div class="footer-copyright text-center py-3">© 2019 Copyright
+</div>
+<!-- Copyright -->
+</footer>
+
 </html>
