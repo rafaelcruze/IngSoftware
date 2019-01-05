@@ -11,8 +11,6 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'rut_validation'
 
-gem 'chilean_rut'
-
 gem 'cancancan'
 
 gem 'devise'
