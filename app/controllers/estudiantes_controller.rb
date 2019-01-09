@@ -46,7 +46,7 @@ class EstudiantesController < ApplicationController
     @estudiante = Estudiante.new(estudiante_params)
     respond_to do |format|
       if @estudiante.save
-        format.html {redirect_to estudiante_path(@estudiante), notice: 'Se Persistio la estudiante'}
+        format.html {redirect_to estudiante_path(@estudiante), notice: 'Se registra a estudiante'}
       else
         format.html {render :nuevo}
       end

@@ -1,3 +1,4 @@
+<div class="container-form">
 <%= form_for(@estudiante, :html => {:role => 'form'}) do |f| %>
   <% if @estudiante.errors.any? %>
   <div class="alert alert-info">
@@ -90,7 +91,7 @@
     <div class="col">
       <%= f.label :apoderado%><br>
       <%= f.select('user_id',
-                   User.all.collect {|c| [c.nombreuno, c.id]}) %>
+                   User.all.collect {|c| [c.nombreuno + " "+ c.apellidouno + " "+ c.apellidodos, c.id]}) %>
     </div>
 
 
@@ -103,4 +104,5 @@
   <%= f.submit 'Guardar Estudiante', class:"btn btn-success"%>
   </div>
 <% end %>
+</div>
 </div>
