@@ -1,7 +1,7 @@
 <div class="container-form">
 <h1>Foro Consultas</h1>
 
-<%= link_to 'Nueva Consulta', new_question_path, class:"btn btn-primary" %>
+<%= link_to 'Nueva Consulta', new_question_path, class:"btn btn-success" %>
 <br>
 <br>
 
@@ -34,8 +34,11 @@
         <p> Respuestas</p>
         <%= form_for([question, question.answers.build]) do |f| %>
         <%= f.text_area :content %>
-        <%= submit_tag "Agregar " %>
+        <br>
+        <div>
+        <%= submit_tag "Agregar ", class:"btn btn-success" %>
         <% end %>
+    </div>
       </div>
       <br>
       <br>
