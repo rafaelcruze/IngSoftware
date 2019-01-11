@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates :celular, presence: {message: 'Ingrese celular'}, length: {is: 9, message:'Largo debe ser 9'}
   validate :fecha_de_nacimiento_debe_ser_en_pasado
   validate :edadminima
+  validate :active_for_authentication?
 
 
 def fecha_de_nacimiento_debe_ser_en_pasado
@@ -40,6 +41,10 @@ end
      if fecha_nacimiento.present? && fecha_nacimiento >= 18.year.ago
           errors.add(:fecha_nacimiento, "debe ser mayor de 18 años")
      end
+  end
+
+  def active_for_authentication?
+    super && self.estado
   end
 
 
