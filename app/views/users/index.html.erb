@@ -4,36 +4,128 @@
 </head>
 <body></body>
 <div class="container-form">
+  <h1>Listado de Usuarios</h1><br>
   <div class="derecha">
-<a href="/users/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a>
-</div>
-  <table class="table table-condensed table-bordered">
-    <thead>
+    <a href="/users/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a>
+  </div>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+
+  <input type="text" id="myInput" onkeyup="buscar()" placeholder="Buscar por nombres...",>
+
+  <table id="myTable" class='table'>
+    <thead class="table table-condensed table-bordered">
     <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Tipo</th>
-      <th>Estado</th>
-      <th colspan="3">Opciones</th>
+      <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+      <th onclick="sortTable(0)"> Nombre </th>
+      <th onclick="sortTable(1)"> Apellido </th>
+      <th onclick="sortTable(2)"> Tipo </th>
+      <th onclick="sortTable(3)"> Estado </th>
+      <th> Opciones </th>
     </tr>
     </thead>
-    <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.nombreuno%></td>
         <td><%= user.apellidouno%></td>
         <td><%= user.tipo_usuario.descripcion %></td>
-        <td><%= user.estado%></td>
+        <td>
+          <%if user.estado == true %>
+            <p class="text-success"><%= user.estado%></p>
+          <%end %>
+          <%if user.estado == false %>
+            <p class="text-danger"><%= user.estado%></p>
+          <%end %>
+
+        </td>
         <td><%= link_to 'Mostrar', user_url(user), class: "btn btn-primary" %></td>
         <td><%= link_to 'Editar', editar_user_url(user), class: "btn btn-warning" %></td>
         <% if user.estado == true %>
-        <td><%= link_to 'Cambiar estado', user_path(user), class: "btn btn-danger",
-                        method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
-                        <% end %>
+          <td><%= link_to 'Cambiar estado', user_path(user), class: "btn btn-danger",
+                          method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
-  </table>
+    </table>
 </div>
 </body>
 </html>
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        //Set the sorting direction to ascending:
+        dir = "asc";
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /*check if the two rows should switch place,
+                based on the direction, asc or desc:*/
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch= true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount ++;
+            } else {
+                /*If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+    function buscar() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>

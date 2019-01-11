@@ -4,6 +4,7 @@
 </head>
 <body></body>
 <div class="container-form">
+  <h1>Listado de Pagos</h1><br>
 <div class="derecha">
     <h1><a href="/pagos.pdf"><i class="fas fa-file-pdf"></i></a> <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br></h1>
 </div>
@@ -23,17 +24,22 @@
   <tbody>
   <% @pagos.each do |pago| %>
     <tr>
-      <td><%= pago.estudiante.nombreuno%> <%= pago.estudiante.apellidouno %></td>  
+      <td><%= pago.estudiante.nombreuno%> <%= pago.estudiante.apellidouno %></td>
       <td><%= pago.valor %></td>
       <td><%= pago.abono %></td>
       <td><%= pago.saldo%></td>
       <td><%= pago.fecha_pago %></td>
-      <td><%= pago.estado.descripcion %></td>
+      <td>
+        <%if pago.estado.descripcion ==  'Pendiente'%>
+        <p class="text-danger"><%= pago.estado.descripcion %></p>
+          <%end %>
+        <%if pago.estado.descripcion ==  'Pagado'%>
+          <p class="text-success"><%= pago.estado.descripcion %></p>
+        <%end %>
+      </td>
       <td><%= pago.tipo_pago.descripcion %></td>
       <td><%= link_to 'Mostrar', pago_url(pago), class: "btn btn-primary" %></td>
       <td><%= link_to 'Editar', editar_pago_url(pago), class: "btn btn-warning" %></td>
-      <td><%= link_to 'Eliminar', pago_path(pago), class: "btn btn-danger",
-                      method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
     </tr>
     <%end%>
   </tbody>

@@ -15,12 +15,12 @@ end
 
   end
 
-  def eliminar
-    @pago.destroy
-    respond_to do |format|
-      format.html {redirect_to pagos_path, notice: 'eliminado'}
-    end
-  end
+  #def eliminar
+ #   @pago.destroy
+    #respond_to do |format|
+    #  format.html {redirect_to pagos_path, notice: 'eliminado'}
+    #end
+  #end
 
   def update
     @pago = Pago.find(params[:id])
