@@ -10,7 +10,6 @@ class EstudiantesController < ApplicationController
       format.json
       format.pdf {render template: 'estudiantes/lista', pdf: 'Lista', layout: 'lista.html'}
     end
-
   end
 
   def mostrar

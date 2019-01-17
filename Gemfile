@@ -7,6 +7,8 @@ end
 
 gem 'will_paginate-bootstrap'
 
+gem 'pg_search'
+
 gem 'bootstrap-datepicker-rails'
 
 gem 'rut_validation'

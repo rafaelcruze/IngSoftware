@@ -3,13 +3,15 @@ class PagosController < ApplicationController
   before_action :set_pago, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
+    #@pagos = Pago.search(params[:search])
     @pagos = Pago.all
     respond_to do |format|
     format.html
     format.json
     format.pdf {render template: 'pagos/listapagos', pdf: 'Listapagos', layout: 'lista.html'}
   end
-end
+  end
+
 
   def mostrar
 
