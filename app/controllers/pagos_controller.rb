@@ -4,14 +4,23 @@ class PagosController < ApplicationController
 
   def index
     #@pagos = Pago.search(params[:search])
-    @pagos = Pago.all
+    @pagos = Pago.order("fecha_pago DESC")
     respond_to do |format|
-    format.html
-    format.json
-    format.pdf {render template: 'pagos/listapagos', pdf: 'Listapagos', layout: 'lista.html'}
-  end
+      format.html
+      format.json
+      format.pdf {render template: 'pagos/listapagos', pdf: 'Listapagos', layout: 'lista.html'}
+    end
   end
 
+  def buscar
+     @pagos = @pagos.where("estudiante_id = ?", params[:estudiante_id])
+     @id_estudiante = params[:estudiante_id]
+  end
+
+  def show
+    @pagos = Pago.where("estudiante_id = ?", params[:id])
+    render template: 'pagos/buscapagos2.pdf', pdf: 'listapagos2', layout: 'lista.html'
+  end
 
   def mostrar
 

@@ -6,10 +6,15 @@
 <div class="container-form">
   <h1>Listado de Pagos</h1><br>
 <div class="derecha">
-    <h1><a href="/pagos.pdf"><i class="fas fa-file-pdf"></i></a> <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br></h1>
+    <h1>
+      <a href="pdf/<%= @id_estudiante %>" target="_blank">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+
+      <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br></h1>
 </div>
 
-<%= form_tag("pagos/buscar", method: :get) do %>
+<%= form_tag("buscar", method: :get) do %>
   <div class="form-group">
     <%= select_tag :estudiante_id, options_from_collection_for_select(Estudiante.all, "id", "nombreuno", params[:estudiante_id]), prompt: "Estudiante", class: "form-control" %>
   </div>
@@ -52,6 +57,4 @@
     <%end%>
   </tbody>
 </table>
-</div>
-</body>
 </html>

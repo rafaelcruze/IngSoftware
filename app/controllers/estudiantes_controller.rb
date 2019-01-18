@@ -4,12 +4,12 @@ class EstudiantesController < ApplicationController
 
   def index
     #@estudiantes = Estudiante.paginate(:page => params[:page], :per_page =>10)
-    @estudiantes = Estudiante.search(params[:search])
+      @estudiantes = @estudiantes.where("nombreuno ILIKE ?", "%#{params[:nombreuno]}%")
     respond_to do |format|
       format.html
       format.json
       format.pdf {render template: 'estudiantes/lista', pdf: 'Lista', layout: 'lista.html'}
-    end
+      end
   end
 
   def mostrar

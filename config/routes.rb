@@ -39,6 +39,8 @@ end
   #CRUD PAGO
 
   get '/pagos', to: 'pagos#index', as: 'pagos'
+  get 'pagos/buscar'
+  get '/pagos/pdf/:id', to: 'pagos#show'
   get '/pagos/nuevo', to: 'pagos#nuevo' #new
   get '/pagos/:id', to: 'pagos#mostrar', as: 'pago' #show
   post '/pagos', to: 'pagos#crear', as: 'crear_pago'

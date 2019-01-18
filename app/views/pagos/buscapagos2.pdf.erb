@@ -1,0 +1,27 @@
+<center><h1> Pagos de Sala Cuna y Jardín Infatil </h1></center>
+<table class="table">
+  <thead>
+  <tr>
+    <th style="width: 200px;">Estudiante</th>
+    <th style="width: 200px;">Valor</th>
+    <th style="width: 200px;">Abono</th>
+    <th style="width: 200px;">Saldo</th>
+    <th style="width: 200px;">Fecha pago</th>
+    <th style="width: 200px;">Estado</th>
+    <th style="width: 200px;">Tipo de pago </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @pagos.each do |pago| %>
+    <tr>
+      <td><%= pago.estudiante.nombreuno %> <%= pago.estudiante.apellidouno%></td>
+      <td><%= pago.valor %></td>
+      <td><%= pago.abono %></td>
+      <td><%= pago.saldo %></td>
+      <td><%= pago.fecha_pago %></td>
+      <td><%= pago.estado.descripcion %></td>
+      <td><%= pago.tipo_pago.descripcion %></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

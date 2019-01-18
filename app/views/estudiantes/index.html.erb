@@ -11,10 +11,13 @@
       <a href="/estudiantes/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a></h1>
 </div>
 
-  <%= form_tag estudiantes_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
-  <%end %>
+<%= form_tag estudiantes_path, method: :get do %>
+<div class="form-group">
+  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control", placeholder: "primer nombre" %>
+</div>
+
+<%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+<% end %>
 
 <table class="table table-condensed table-bordered">
   <thead>
