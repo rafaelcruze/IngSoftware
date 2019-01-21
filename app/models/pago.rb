@@ -6,17 +6,17 @@ class Pago < ApplicationRecord
 
   validates :valor , presence: { message: 'Ingrese un valor'}, numericality: { only_integer: true }
   validates :abono , presence: { message: 'Ingrese un abono'}, numericality: { only_integer: true }
-  validates :saldo , presence: true
   validates :fecha_pago , presence: { message: 'Ingrese una fecha de pago'}
   validates :tipo_pago_id , presence: { message: 'Seleccione tipo de pago'}
   validates :estado_id , presence: { message: 'Seleccione estado de pago'}
   validates :user_id , presence: { message: 'Seleccione al apoderado'}
   validates :estudiante_id , presence: { message: 'Seleccione al estudiante'}
   validate :fecha_de_pago
-  validate :positivo
-  validate :validapago
-  validate :blancos
+  #validate :positivo
+  #validate :validapago
+  #validate :blancos
   validate :abonocero
+  before_save :resta
 
   def fecha_de_pago
     if !fecha_pago.blank? and fecha_pago < Date.today
@@ -24,28 +24,14 @@ class Pago < ApplicationRecord
     end
   end
 
-  def positivo
-    if !valor.blank? and valor<=0
-      errors.add(:valor, ": Debe ingresar cantidad superior a 0")
-    end
-  end
-
-  def validapago
-    if abono > valor
-      errors.add(:abono, "El abono debe ser un monto inferior al valor")
-    end
-  end
-
-  def blancos
-    if valor.blank? and abono.blank?
-      errors.add(:valor, :abono, "Ingrese valor y abono")
-    end
-  end
-
   def abonocero
       if abono == 0
         errors.add(:abono, "Abono no puede ser cero")
     end
+  end
+
+  def resta
+    self.saldo = self.valor-self.abono
   end
 
 end
