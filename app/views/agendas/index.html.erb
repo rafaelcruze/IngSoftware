@@ -1,5 +1,5 @@
 <div class="container-form">
-  
+
  <div class="boton">
   <a href="/agendas/nuevo" class="btn btn-success btn-lg " role="button" aria-pressed="true">Nuevo</a>
 </div>
@@ -8,22 +8,23 @@
 <% @agendas.each do |agenda| %><br>
 
   <div style="border: 2px solid black; background-color: #add8e6;">
-      <%= time_ago_in_words(agenda.created_at) %> por <%= agenda.user.nombreuno %>
-      <br>
-            <h4> Estudiante</h4><%= agenda.estudiante.nombreuno %> <%= agenda.estudiante.apellidouno %>
-            <h4> Comentario</h4><%= agenda.comentario %><br>
-            <%= agenda.fecha %>
-            
+      <%= time_ago_in_words(agenda.created_at) %> realizado por <%= agenda.user.nombreuno %>,
+      <%= agenda.fecha %><br><br>
+
+            <h4> Estudiante: <%= agenda.estudiante.nombreuno %> <%= agenda.estudiante.apellidouno %></h4>
+            <h4> Comentario: <%= agenda.comentario %></h4><br>
+
+
            <% if can? :update, agenda %>
             <%= link_to 'Editar', editar_agenda_url(agenda),class:"btn btn-warning" %>
           <% end %>
-           
+
            <% if can? :eliminar, agenda %>
             <%= link_to 'Eliminar', agenda_path(agenda),
               method: :delete,
               data: {confirm: '¿Estas seguro?'}, class:"btn btn-danger" %>
               <% end %>
-             
+
       </div>
 <% end %>
 </div>

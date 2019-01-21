@@ -13,7 +13,11 @@
 
 <%= form_tag estudiantes_path, method: :get do %>
 <div class="form-group">
-  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control", placeholder: "primer nombre" %>
+  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control-plaintex", placeholder: "primer nombre" %>
+</div>
+
+<div class="form-group">
+  <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-plaintex", placeholder: "primer apellido" %>
 </div>
 
 <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>

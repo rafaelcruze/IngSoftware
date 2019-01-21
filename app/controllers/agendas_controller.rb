@@ -41,7 +41,7 @@ class AgendasController < ApplicationController
     @agenda.fecha = Time.now
     respond_to do |format|
       if @agenda.save
-        format.html {redirect_to agenda_path(@agenda), notice: 'Se Persistio la agenda'}
+        format.html {redirect_to "/agendas", notice: 'Se Persistio la agenda'}
       else
         format.html {render :nuevo}
       end

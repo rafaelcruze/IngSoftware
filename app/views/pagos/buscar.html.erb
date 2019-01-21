@@ -14,13 +14,13 @@
       <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br></h1>
 </div>
 
-<%= form_tag("buscar", method: :get) do %>
+<!-- <%= form_tag("buscar", method: :get) do %>
   <div class="form-group">
     <%= select_tag :estudiante_id, options_from_collection_for_select(Estudiante.all, "id", "nombreuno", params[:estudiante_id]), prompt: "Estudiante", class: "form-control" %>
   </div>
   <%= submit_tag "Buscar", nombreuno: nil, class: "btn btn-primary btn-md" %>
 <% end %>
-
+-->
 <table class="table table-condensed table-bordered">
   <thead>
   <tr>
@@ -57,4 +57,5 @@
     <%end%>
   </tbody>
 </table>
+</div>
 </html>

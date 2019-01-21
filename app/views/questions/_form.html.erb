@@ -1,8 +1,9 @@
+<div class="container-form">
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-info">
-      <%= pluralize(question.errors.count, "Error") %> 
+      <%= pluralize(question.errors.count, "Error") %>
     </div>
 
       <ul>
@@ -14,10 +15,12 @@
       </ul>
     </div>
   <% end %>
-
+  <h1>Nueva Consulta</h1><br>
   <div class="field">
     <%= form.label :Contenido %><br>
     <%= form.text_area :content, id: :question_content %>
   </div><br>
     <%= form.submit "Guardar", class:"btn btn-success" %>
+    <%= link_to 'Volver', questions_path, class: "btn btn-warning" %>
 <% end %>
+</div>

@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   load_and_authorize_resource
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-  
+
   def index
     @questions = Question.all
   end
@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     end
   end
 
- 
+
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -62,7 +62,7 @@ class QuestionsController < ApplicationController
       @question = Question.find(params[:id])
     end
 
-   
+
     def question_params
       params.require(:question).permit(:content)
     end
