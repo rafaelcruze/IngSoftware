@@ -13,6 +13,12 @@
 
   <h1>Registro de Pagos</h1>
 
+  <div class="field"><br>
+    <%= f.label :tipopago %>
+    <%= f.select('tipo_pago_id',
+               TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
+  </div>
+
  <div class="form">
    <div class="field"><br>
     <%= f.label :apoderado, autofocus: true %>
@@ -48,11 +54,6 @@
                Estado.all.collect { |c| [c.descripcion, c.id] }) %>
   </div>
 
-  <div class="field"><br>
-    <%= f.label :tipopago %>
-    <%= f.select('tipo_pago_id',
-               TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
-  </div>
 </div>
 <div class="actions"><br>
   <%= f.submit 'Guardar Pago', class:"btn btn-success"%>

@@ -1,5 +1,5 @@
 <div class="container-form">
-<h1><%=  @agenda.comentario %></h1>
-<h1><%= @agenda.fecha %><h1>
-<%= link_to 'Back', agendas_path %>
+<h3>Comentario: <%=  @agenda.comentario %></h3>
+<h3>Fecha de comentario: <%= @agenda.fecha %><h3>
+<%= link_to 'Back', agendas_path, class:"btn btn-warning" %>
 </div>

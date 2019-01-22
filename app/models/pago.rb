@@ -14,19 +14,31 @@ class Pago < ApplicationRecord
   validate :fecha_de_pago
   #validate :positivo
   #validate :validapago
-  #validate :blancos
+  validate :abonomenorvalor
   validate :abonocero
   before_save :resta
 
   def fecha_de_pago
     if !fecha_pago.blank? and fecha_pago < Date.today
-      errors.add(:fecha, "Ingresaste fecha que ya pasó")
+      errors.add(:fecha, "ingresaste fecha que ya pasó")
     end
   end
 
   def abonocero
       if abono == 0
-        errors.add(:abono, "Abono no puede ser cero")
+        errors.add(:abono, "tiene que ser mayor cero")
+    end
+  end
+
+  def valorcero
+    if valor ==
+      erros.add(:valor, "tiene que ser mayor a cero")
+    end
+  end
+
+  def abonomenorvalor
+    if abono > valor
+      errors.add(:abono, "tiene que ser menor que valor")
     end
   end
 

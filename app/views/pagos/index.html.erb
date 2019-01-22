@@ -24,6 +24,7 @@
     <th>Abono</th>
     <th>Saldo</th>
     <th>Fecha pago</th>
+    <th>Fecha de ingreso</th>
     <th>Estado</th>
     <th>Tipo pago</th>
     <th colspan="3">Opciones</th>
@@ -37,6 +38,7 @@
       <td><%= pago.abono %></td>
       <td><%= pago.saldo%></td>
       <td><%= pago.fecha_pago %></td>
+      <td><%= pago.created_at %></td>
       <td>
         <%if pago.estado.descripcion ==  'Pendiente'%>
         <p class="text-danger"><%= pago.estado.descripcion %></p>

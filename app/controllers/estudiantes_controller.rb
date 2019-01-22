@@ -3,7 +3,7 @@ class EstudiantesController < ApplicationController
   before_action :set_estudiante, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
-    #@estudiantes = Estudiante.paginate(:page => params[:page], :per_page =>10)
+    @estudiantes = Estudiante.paginate(:page => params[:page], :per_page =>10)
       @estudiantes = @estudiantes.where("nombreuno ILIKE ?", "%#{params[:nombreuno]}%")
       @estudiantes = @estudiantes.where("apellidouno ILIKE ?", "%#{params[:apellidouno]}%")
     respond_to do |format|
