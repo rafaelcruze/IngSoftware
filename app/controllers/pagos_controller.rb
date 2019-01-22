@@ -53,13 +53,25 @@ class PagosController < ApplicationController
   def crear
     @pago= Pago.new(pago_params)
     #@pago.saldo = @pago.valor - @pago.abono
+    if @pago.abono != nil and @pago.valor != nil
+      respond_to do |format|
+        if @pago.save
+          format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
+        else
+          format.html {render :nuevo}
+        end
+      end
+    else
+    @pago.abono = 0
+    @pago.valor = 0
     respond_to do |format|
       if @pago.save
-        format.html {redirect_to pago_path(@pago), notice: 'Se Persistio el Pago'}
+        format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
       else
         format.html {render :nuevo}
       end
     end
+  end
   end
 
     private

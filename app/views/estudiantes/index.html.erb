@@ -10,16 +10,19 @@
     <h1><a href="/estudiantes.pdf"><i class="fas fa-file-pdf"></i></a>
       <a href="/estudiantes/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a></h1>
 </div>
-
+<div class="row">
+  <div class="col-3">
 <%= form_tag estudiantes_path, method: :get do %>
 <div class="form-group">
-  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control-plaintex", placeholder: "primer nombre" %>
+  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control-plaintex", placeholder: "primer nombre", class:"form-control" %>
 </div>
-
+</div>
+<div class="col-3">
 <div class="form-group">
-  <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-plaintex", placeholder: "primer apellido" %>
+  <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-plaintex", placeholder: "primer apellido" , class:"form-control"%>
 </div>
-
+</div>
+</div>
 <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>
 

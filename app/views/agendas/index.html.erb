@@ -8,6 +8,7 @@
 <% @agendas.each do |agenda| %><br>
 
   <div style="border: 2px solid black; background-color: #add8e6;">
+    <div class="container">
             <h4> Estudiante: <%= agenda.estudiante.nombreuno %> <%= agenda.estudiante.apellidouno %></h4>
             <h4> Comentario: <%= agenda.comentario %></h4>
             <%= time_ago_in_words(agenda.created_at) %> realizado por <%= agenda.user.nombreuno %>,
@@ -24,6 +25,7 @@
               data: {confirm: '¿Estas seguro?'}, class:"btn btn-danger" %>
               <% end %>
 
+      </div>
       </div>
 <% end %>
 </div>

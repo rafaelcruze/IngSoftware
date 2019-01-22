@@ -4,8 +4,8 @@ class Pago < ApplicationRecord
   has_many :user #pago puede estar asociado a un usuario
   belongs_to :estudiante #pago puede estar asociado a un estudiante
 
-  validates :valor , presence: { message: 'Ingrese un valor'}, numericality: { only_integer: true }
-  validates :abono , presence: { message: 'Ingrese un abono'}, numericality: { only_integer: true }
+  validates :valor , presence: {message: 'ingrese un valor'}, numericality: { only_integer: true, message: 'tiene que ser numérico' }
+  validates :abono , presence: {message: 'ingrese el abono'}, numericality: { only_integer: true, message: 'tiene que ser numérico' }
   validates :fecha_pago , presence: { message: 'Ingrese una fecha de pago'}
   validates :tipo_pago_id , presence: { message: 'Seleccione tipo de pago'}
   validates :estado_id , presence: { message: 'Seleccione estado de pago'}
@@ -15,6 +15,7 @@ class Pago < ApplicationRecord
   #validate :positivo
   #validate :validapago
   validate :abonomenorvalor
+  validate :valorcero
   validate :abonocero
   before_save :resta
 
@@ -31,8 +32,8 @@ class Pago < ApplicationRecord
   end
 
   def valorcero
-    if valor ==
-      erros.add(:valor, "tiene que ser mayor a cero")
+    if valor == 0
+      errors.add(:valor, "tiene que ser mayor a cero")
     end
   end
 

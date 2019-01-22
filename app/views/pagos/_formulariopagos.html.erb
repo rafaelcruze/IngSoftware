@@ -14,7 +14,7 @@
   <h1>Registro de Pagos</h1>
 
   <div class="field"><br>
-    <%= f.label :tipopago %>
+    <%= f.label :tipo_de_pago %>
     <%= f.select('tipo_pago_id',
                TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
   </div>

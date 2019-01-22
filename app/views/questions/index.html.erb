@@ -8,13 +8,15 @@
 <% @questions.each do |question| %>
 
   <div style="border: 1px solid black; background-color: #add8e6;">
+    <div class="container">
       <h3> <%= question.content %> </h3>
+
       <%= time_ago_in_words(question.created_at) %>  por <%= question.user.nombreuno %>
       <br>
 
       <% if can? :update, question %>
       <%= link_to 'Editar', edit_question_path(question) %>
-      <% end %>   
+      <% end %>
 
       <% if can? :destroy, question %>
       <%= link_to 'Eliminar', question, method: :delete, data: {confirm: "Estás seguro?"} %>
@@ -24,7 +26,7 @@
       <% if question.answers.any? %>
 
         <h4> Respuestas</h4>
-        
+
         <%= render question.answers %>
 
         <% end %>
@@ -38,6 +40,7 @@
         <div>
         <%= submit_tag "Agregar ", class:"btn btn-success" %>
         <% end %>
+    </div>
     </div>
       </div>
       <br>
