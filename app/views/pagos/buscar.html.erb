@@ -14,12 +14,13 @@
       <a href="pagos/nuevo" class="btn btn-success btn-lg btn-primary" role="button" aria-pressed="true">Agregar pago</a><br></h1>
 </div>
 
- <%= form_tag("buscar", method: :get) do %>
+ <%=form_tag("buscar", method: :get) do %>
   <div class="form-group, col-3">
-    <%= select_tag :estudiante_id, options_from_collection_for_select(Estudiante.all, "id", "nombreuno", params[:estudiante_id]), class: "form-control" %>
-  </div>
+    <%= select_tag 'estudiante_id', options_for_select(Estudiante.all.collect{|u| [u.nombreuno + " "+ u.apellidouno, u.id]}), class: "form-control" %>
+  </div><br>
   <%= submit_tag "Buscar", nombreuno: nil, class: "btn btn-primary btn-md" %>
-<% end %>
+  <%= link_to "Volver", "/pagos" , class:"btn btn-warning"%>
+<% end %><br>
 <table class="table table-condensed table-bordered">
   <thead>
   <tr>

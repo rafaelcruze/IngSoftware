@@ -11,7 +11,7 @@
 <div class="col-3">
 <%= form_tag("pagos/buscar", method: :get) do %>
   <div class="form-group">
-    <%= select_tag :estudiante_id, options_from_collection_for_select(Estudiante.all, "id", "nombreuno", params[:estudiante_id]), class: "form-control" %>
+    <%= select_tag 'estudiante_id', options_for_select(Estudiante.all.collect{|u| [u.nombreuno + " "+ u.apellidouno, u.id]}), class: "form-control" %>
   </div>
   <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>

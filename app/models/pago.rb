@@ -11,7 +11,7 @@ class Pago < ApplicationRecord
   validates :estado_id , presence: { message: 'Seleccione estado de pago'}
   validates :user_id , presence: { message: 'Seleccione al apoderado'}
   validates :estudiante_id , presence: { message: 'Seleccione al estudiante'}
-  validate :fecha_de_pago
+  #validate :fecha_de_pago
   #validate :positivo
   #validate :validapago
   validate :abonomenorvalor

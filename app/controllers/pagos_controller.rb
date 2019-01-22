@@ -1,6 +1,6 @@
 class PagosController < ApplicationController
   load_and_authorize_resource
-  before_action :set_pago, only: [:mostrar,:eliminar,:editar,:update]
+  before_action :set_pago, only: [:mostrar,:editar,:update]
 
   def index
     #@pagos = Pago.search(params[:search])
