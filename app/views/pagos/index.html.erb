@@ -37,8 +37,8 @@
       <td><%= pago.valor %></td>
       <td><%= pago.abono %></td>
       <td><%= pago.saldo%></td>
-      <td><%= pago.fecha_pago %></td>
-      <td><%= pago.created_at %></td>
+      <td><%= pago.fecha_pago.strftime("%d-%m-%y") %></td>
+      <td><%= pago.created_at.strftime("%d-%m-%y") %></td>
       <td>
         <%if pago.estado.descripcion ==  'Pendiente'%>
         <p class="text-danger"><%= pago.estado.descripcion %></p>
