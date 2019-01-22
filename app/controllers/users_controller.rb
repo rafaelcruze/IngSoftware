@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
-    @users = User.all
+    @users = @users.where("nombreuno ILIKE ?", "%#{params[:nombreuno]}%")
+    @users = @users.where("apellidouno ILIKE ?", "%#{params[:apellidouno]}%")
+    respond_to do |format|
+      format.html
+      format.json
+      end
   end
 
   def mostrar
@@ -21,7 +26,7 @@ class UsersController < ApplicationController
   def update
       if @user.update(user_params)
         respond_to do |format|
-        format.html {redirect_to user_path(@user), notice: 'Se Actualizaron los datos'}
+        format.html {redirect_to "/users", notice: 'Se Actualizaron los datos'}
       end
       else
         render :editar
@@ -39,7 +44,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html {redirect_to user_path(@user), notice: 'Se Registro Usuario'}
+        format.html {redirect_to "/users", notice: 'Se Registro Usuario'}
       else
         format.html {render :nuevo}
       end

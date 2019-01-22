@@ -13,7 +13,7 @@
   <div class="form-group">
     <%= select_tag :estudiante_id, options_from_collection_for_select(Estudiante.all, "id", "nombreuno", params[:estudiante_id]), class: "form-control" %>
   </div>
-  <%= submit_tag "Buscar", nombreuno: nil, class: "btn btn-primary btn-md" %>
+  <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>
 </div>
 <table class="table table-condensed table-bordered">

@@ -10,21 +10,17 @@
     <h1><a href="/estudiantes.pdf"><i class="fas fa-file-pdf"></i></a>
       <a href="/estudiantes/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a></h1>
 </div>
-<div class="row">
-  <div class="col-3">
+
 <%= form_tag estudiantes_path, method: :get do %>
-<div class="form-group">
-  <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control-plaintex", placeholder: "primer nombre", class:"form-control" %>
-</div>
-</div>
-<div class="col-3">
-<div class="form-group">
-  <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-plaintex", placeholder: "primer apellido" , class:"form-control"%>
-</div>
-</div>
-</div>
-<%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+  <div class="form-group">
+    <%= text_field_tag :nombreuno, params[:nombreuno], class: "form-control-3", placeholder: "primer nombre" %>
+  </div>
+  <div class="form-group">
+    <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-3", placeholder: "primer apellido" %>
+  </div>
+  <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>
+
 
 <table class="table table-condensed table-bordered">
   <thead>
@@ -42,7 +38,16 @@
       <td><%= estudiante.nombreuno %></td>
       <td><%= estudiante.apellidouno %></td>
       <td><%= estudiante.rut %></td>
-      <td><%= estudiante.estado %></td>
+      <td>
+      <% if estudiante.estado == false %>
+      <p class="text-danger"><%= estudiante.estado %></p>
+      <% end %>
+
+      <% if estudiante.estado == true %>
+      <p class="text-success"><%= estudiante.estado %></p>
+      <% end %>
+
+      </td>
       <td><%= link_to 'Mostrar', estudiante_url(estudiante), class: "btn btn-primary" %></td>
       <td><%= link_to 'Editar', editar_estudiante_url(estudiante), class: "btn btn-warning" %></td>
       <% if estudiante.estado == true %>

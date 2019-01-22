@@ -15,6 +15,7 @@
   <h1>Nivel Educacional: <%= @estudiante.nivel_educacional.descripcion %></h1>
   <h1>Jornada: <%= @estudiante.jornada.descripcion %></h1>
   <%= link_to "Generar PDF",estudiante_url(@estudiante, :format => :pdf), class: "btn btn-primary"%>
+    <a href="/estudiantes" class="btn btn-warning btn-lg" role="button" aria-pressed="true">Volver</a></h1>
 </div>
 </body>
 </html>
