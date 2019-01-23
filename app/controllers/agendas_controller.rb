@@ -3,7 +3,9 @@ class AgendasController < ApplicationController
   before_action :set_agenda, only: [:mostrar,:eliminar,:editar,:update]
 
   def index
-    @agendas = Agenda.all
+    if params[:estudiante_id].present?
+      @agendas = @agendas.where("estudiante_id = ?", params[:estudiante_id])
+    end
   end
 
   def mostrar
@@ -20,7 +22,7 @@ class AgendasController < ApplicationController
   def update
     respond_to do |format|
       if @agenda.update(agenda_params)
-        format.html {redirect_to agenda_path(@agenda), notice: 'Se Actualizaron los datos'}
+        format.html {redirect_to "/agendas", notice: 'Se Actualizaron los datos'}
       else
         render :editar
       end

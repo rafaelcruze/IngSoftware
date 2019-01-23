@@ -9,7 +9,7 @@ class Pago < ApplicationRecord
   validates :fecha_pago , presence: { message: 'Ingrese una fecha de pago'}
   validates :tipo_pago_id , presence: { message: 'Seleccione tipo de pago'}
   validates :estado_id , presence: { message: 'Seleccione estado de pago'}
-  validates :user_id , presence: { message: 'Seleccione al apoderado'}
+  #validates :user_id , presence: { message: 'Seleccione al apoderado'}
   validates :estudiante_id , presence: { message: 'Seleccione al estudiante'}
   #validate :fecha_de_pago
   #validate :positivo

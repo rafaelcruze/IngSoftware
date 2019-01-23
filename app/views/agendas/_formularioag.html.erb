@@ -12,11 +12,11 @@
   <% end %>
 
   <h1>Crear Comentario</h1>
-  
+
   <p>
-    <%= f.label :estudiante %>
+    <%= f.label :estudiante%><br>
     <%= f.select('estudiante_id',
-                 Estudiante.all.collect {|c| [c.nombreuno, c.id]}) %>
+                 Estudiante.all.collect {|c| [c.nombreuno + " "+ c.apellidouno + " "+ c.apellidodos, c.id]}) %>
   </p>
   <p>
   <%= f.label :comentario %><br>

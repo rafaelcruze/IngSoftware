@@ -8,7 +8,10 @@
   <h1>Listado de Estudiantes</h1><br>
   <div class="derecha">
     <h1><a href="/estudiantes.pdf"><i class="fas fa-file-pdf"></i></a>
-      <a href="/estudiantes/nuevo" class="btn btn-success btn-lg" role="button" aria-pressed="true">Nuevo</a></h1>
+      <% if can? :crear, @estudiantes %>
+      <%= link_to 'Nuevo', estudiantes_nuevo_url, class:"btn btn-success" %>
+      <% end %>
+    </h1>
 </div>
 
 <%= form_tag estudiantes_path, method: :get do %>
@@ -19,15 +22,17 @@
     <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-3", placeholder: "primer apellido" %>
   </div>
   <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+  <%= link_to "Volver", "/estudiantes" , class:"btn btn-secondary"%>
 <% end %>
 
 
 <table class="table table-condensed table-bordered">
   <thead>
   <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
+    <th>Estudiante</th>
     <th>Rut</th>
+    <th>Apoderado</th>
+    <th>Nivel Educacional</th>
     <th>Estado</th>
     <th colspan="3">Opciones</th>
   </tr>
@@ -35,9 +40,10 @@
   <tbody>
   <% @estudiantes.each do |estudiante| %>
     <tr>
-      <td><%= estudiante.nombreuno %></td>
-      <td><%= estudiante.apellidouno %></td>
+      <td><%= estudiante.nombreuno %> <%= estudiante.apellidouno %></td>
       <td><%= estudiante.rut %></td>
+      <td><%= estudiante.user.nombreuno %> <%= estudiante.user.apellidouno%></td>
+      <td><%= estudiante.nivel_educacional.descripcion%></td>
       <td>
       <% if estudiante.estado == false %>
       <p class="text-danger"><%= estudiante.estado %></p>
@@ -48,11 +54,15 @@
       <% end %>
 
       </td>
-      <td><%= link_to 'Mostrar', estudiante_url(estudiante), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Mostrar', estudiante_url(estudiante), class: "btn btn-info" %></td>
+      <% if can? :editar, estudiante %>
       <td><%= link_to 'Editar', editar_estudiante_url(estudiante), class: "btn btn-warning" %></td>
+      <%end%>
+      <% if can? :eliminar, estudiante %>
       <% if estudiante.estado == true %>
       <td><%= link_to 'Cambiar estado', estudiante_path(estudiante), class: "btn btn-danger",
                       method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
+                      <%end%>
                       <% end %>
     </tr>
     <%end%>

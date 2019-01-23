@@ -19,12 +19,6 @@
                TipoPago.all.collect { |c| [c.descripcion, c.id] }) %>
   </div>
 
- <div class="form">
-   <div class="field"><br>
-    <%= f.label :apoderado, autofocus: true %>
-    <%= f.select('user_id',
-                 User.all.collect {|c| [c.nombreuno + " "+ c.apellidouno + " "+ c.apellidodos, c.id]}) %>
-   </div>
 
   <div class="field"><br>
     <%= f.label :estudiante,autofocus: true %>
@@ -54,9 +48,9 @@
                Estado.all.collect { |c| [c.descripcion, c.id] }) %>
   </div>
 
-</div>
 <div class="actions"><br>
   <%= f.submit 'Guardar Pago', class:"btn btn-success"%>
+</div>
 </div>
 <% end %>
 </div>

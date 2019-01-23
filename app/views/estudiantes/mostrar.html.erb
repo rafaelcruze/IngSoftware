@@ -6,16 +6,16 @@
 </head>
 <body>
   <div class="container-form">
-  <h1>Nombre: <%= @estudiante.nombreuno %></h1>
-  <h1>Apellido: <%= @estudiante.apellidouno %></h1>
+  <h1>Estudiante: <%= @estudiante.nombreuno %> <%= @estudiante.apellidouno %></h1>
   <h1>Rut: <%= @estudiante.rut %></h1>
   <h1>Fecha de Nacimiento: <%= @estudiante.fecha_nacimiento %></h1>
   <h1>Direccion: <%= @estudiante.direccion %></h1>
   <h1>Comuna: <%= @estudiante.comuna.descripcion %></h1>
   <h1>Nivel Educacional: <%= @estudiante.nivel_educacional.descripcion %></h1>
   <h1>Jornada: <%= @estudiante.jornada.descripcion %></h1>
-  <%= link_to "Generar PDF",estudiante_url(@estudiante, :format => :pdf), class: "btn btn-primary"%>
-    <a href="/estudiantes" class="btn btn-warning btn-lg" role="button" aria-pressed="true">Volver</a></h1>
+  <h1>Apoderado: <%= @estudiante.user.nombreuno %> <%= @estudiante.user.apellidouno%></h1>
+  <!-- <%= link_to "Generar PDF",estudiante_url(@estudiante, :format => :pdf), class: "btn btn-primary"%> -->
+    <a href="/estudiantes" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Volver</a></h1>
 </div>
 </body>
 </html>

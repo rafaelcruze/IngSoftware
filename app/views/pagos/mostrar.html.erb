@@ -6,13 +6,15 @@
 </head>
 <body>
   <div class="container-form">
-  <h1>Estudiante: <%= @pago.estudiante.nombreuno%> <%= @pago.estudiante.apellidodos%><h1>
+  <h1>Estudiante: <%= @pago.estudiante.nombreuno%> <%= @pago.estudiante.apellidouno%><h1>
 <h1>Valor: <%= @pago.valor %></h1>
 <h1>Saldo: <%= @pago.saldo %></h1>
 <h1>Abono: <%= @pago.abono %></h1>
 <h1>Fecha: <%= @pago.fecha_pago%></h1>
 <h1>Estado: <%= @pago.estado.descripcion %></h1>
 <h1>Tipo de pago: <%= @pago.tipo_pago.descripcion %></h1>
+
+<a href="/pagos" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Volver</a></h1>
 </div>
 </body>
 </html>

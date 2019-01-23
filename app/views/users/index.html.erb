@@ -17,6 +17,7 @@
     <%= text_field_tag :apellidouno, params[:apellidouno], class: "form-control-3", placeholder: "primer apellido" %>
   </div>
   <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+  <%= link_to "Volver", "/users" , class:"btn btn-secondary"%>
 <% end %>
 <table class="table table-condensed table-bordered">
   <thead>
@@ -46,7 +47,7 @@
       <% end %>
 
       </td>
-      <td><%= link_to 'Mostrar', user_url(user), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Mostrar', user_url(user), class: "btn btn-info" %></td>
       <td><%= link_to 'Editar', editar_user_url(user), class: "btn btn-warning" %></td>
       <% if user.estado == true %>
       <td><%= link_to 'Cambiar estado', user_path(user), class: "btn btn-danger",

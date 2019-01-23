@@ -19,7 +19,7 @@
     <%= select_tag 'estudiante_id', options_for_select(Estudiante.all.collect{|u| [u.nombreuno + " "+ u.apellidouno, u.id]}), class: "form-control" %>
   </div><br>
   <%= submit_tag "Buscar", nombreuno: nil, class: "btn btn-primary btn-md" %>
-  <%= link_to "Volver", "/pagos" , class:"btn btn-warning"%>
+  <%= link_to "Volver", "/pagos" , class:"btn btn-secondary"%>
 <% end %><br>
 <table class="table table-condensed table-bordered">
   <thead>
@@ -51,7 +51,7 @@
         <%end %>
       </td>
       <td><%= pago.tipo_pago.descripcion %></td>
-      <td><%= link_to 'Mostrar', pago_url(pago), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Mostrar', pago_url(pago), class: "btn btn-info" %></td>
       <td><%= link_to 'Editar', editar_pago_url(pago), class: "btn btn-warning" %></td>
     </tr>
     <%end%>

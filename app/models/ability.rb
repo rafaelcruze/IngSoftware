@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
+
     user ||= User.new
 
     if user.tipo_usuario.descripcion == "Administrador"
@@ -25,6 +25,7 @@ class Ability
             answers.user == user
         end
         can :create, Answer
+
     end
     if user.tipo_usuario.descripcion == "Tia"
         #Permisos de Questions y Answers
@@ -63,7 +64,7 @@ class Ability
 
         can :index, Estudiante
     end
-            
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

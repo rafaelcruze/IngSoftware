@@ -36,7 +36,8 @@ class PagosController < ApplicationController
   def update
     @pago = Pago.find(params[:id])
       if @pago.update(pago_params)
-        redirect_to pago_path(@pago), notice: 'Se Actualizaron los datos'
+        #redirect_to pago_path(@pago), notice: 'Se Actualizaron los datos'
+        redirect_to "/pagos", notice: 'Se Actualizaron los datos'
       else
         render :editar
       end
@@ -56,7 +57,8 @@ class PagosController < ApplicationController
     if @pago.abono != nil and @pago.valor != nil
       respond_to do |format|
         if @pago.save
-          format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
+          #format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
+          format.html {redirect_to "/pagos", notice: 'Se agrega el pago'}
         else
           format.html {render :nuevo}
         end
@@ -66,7 +68,8 @@ class PagosController < ApplicationController
     @pago.valor = 0
     respond_to do |format|
       if @pago.save
-        format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
+        #format.html {redirect_to pago_path(@pago), notice: 'Se agrega el pago'}
+        format.html {redirect_to "/pagos", notice: 'Se agrega el pago'}
       else
         format.html {render :nuevo}
       end

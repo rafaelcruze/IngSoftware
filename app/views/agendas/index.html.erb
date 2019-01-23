@@ -4,7 +4,15 @@
   <a href="/agendas/nuevo" class="btn btn-success btn-lg " role="button" aria-pressed="true">Nuevo</a>
 </div>
   <h2>Agenda</h2>
-
+  <div class="col-3">
+  <%= form_tag agendas_path, method: :get do %>
+  <div class="form-group">
+    <%= select_tag 'estudiante_id', options_for_select(Estudiante.all.collect{|u| [u.nombreuno + " "+ u.apellidouno, u.id]}), class: "form-control" %>
+  </div>
+  <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+  <%= link_to "Volver", "/agendas" , class:"btn btn-secondary"%>
+<% end %>
+</div>
 <% @agendas.each do |agenda| %><br>
 
   <div style="border: 2px solid black; background-color: #add8e6;">
@@ -13,7 +21,6 @@
             <h4> Comentario: <%= agenda.comentario %></h4>
             <%= time_ago_in_words(agenda.created_at) %> realizado por <%= agenda.user.nombreuno %>,
             <%= agenda.fecha %><br><br>
-
 
            <% if can? :update, agenda %>
             <%= link_to 'Editar', editar_agenda_url(agenda),class:"btn btn-warning" %>
@@ -24,6 +31,7 @@
               method: :delete,
               data: {confirm: '¿Estas seguro?'}, class:"btn btn-danger" %>
               <% end %>
+
 
       </div>
       </div>

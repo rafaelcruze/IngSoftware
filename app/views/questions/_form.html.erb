@@ -15,12 +15,12 @@
       </ul>
     </div>
   <% end %>
-  <h1>Nueva Consulta</h1><br>
+  <h1>Consulta</h1><br>
   <div class="field">
     <%= form.label :Contenido %><br>
     <%= form.text_area :content, id: :question_content %>
   </div><br>
     <%= form.submit "Guardar", class:"btn btn-success" %>
-    <%= link_to 'Volver', questions_path, class: "btn btn-warning" %>
+    <%= link_to 'Volver', questions_path, class: "btn btn-secondary" %>
 <% end %>
 </div>
