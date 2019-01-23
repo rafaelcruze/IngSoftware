@@ -6,13 +6,13 @@
 </head>
 <body>
   <div class="container-form">
-  <h1>Nombres: <%= @user.nombreuno %></h1>
-  <h1>Apellidos: <%= @user.apellidouno %></h1>
+  <h1>Nombre: <%= @user.nombreuno %> <%= @user.apellidouno %></h1>
   <h1>Rut: <%= @user.rut %></h1>
   <h1>Fecha de Nacimiento: <%= @user.fecha_nacimiento %></h1>
   <h1>Direccion: <%= @user.direccion %></h1>
   <h1>Comuna: <%= @user.comuna.descripcion %></h1>
   <h1>Celular: <%= @user.celular %></h1>
+  <h1>Tipo: <%= @user.tipo_usuario.descripcion %></h1>
   <a href="/users" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Volver</a></h1>
 </div>
 </body>
